@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <%= image_tag('logo', alt: 'Tip-Me logo', class: 'logo')%>
+  </div>
+  <div data-controller="search-team-members">
+    <%= render 'form' %>
+    <%= render 'list', team_members: @team_members %>
+  </div>
+</div>

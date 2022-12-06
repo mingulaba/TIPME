@@ -1,0 +1,11 @@
+<%= form_with url: team_members_path, method: :get, html: {class:
+    "mb-4", data: {search_team_members_target: "form"}} do |f| %>
+    <%= f.text_field :query,
+                    class: "form-control",
+                    placeholder: "Type the name of a team member",
+                    value: params[:query],
+                    data: {
+                      search_team_members_target: "input",
+                      action: "keyup->search-team-members#update"
+                    } %>
+<% end %>
