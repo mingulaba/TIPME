@@ -1,7 +1,22 @@
 <h1>This is a show page</h1>
 
+
+
+<div class="container">
+<div class="card ">
+
 <%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}} do |f| %>
+        <h5>Amount in the bill</h5>
         <%= f.input :tip, placeholder: "Your tip" %>
         <%= f.input :review, placeholder: "Add your feedback" %>
+           <div class="rating">
+         <i class="rating__star far fa-star"></i>
+         <i class="rating__star far fa-star"></i>
+         <i class="rating__star far fa-star"></i>
+         <i class="rating__star far fa-star"></i>
+         <i class="rating__star far fa-star"></i>
+   </div>
         <%= f.submit "Add", class: "btn btn-primary" %>
       <% end %>
+</div>
+</div>
