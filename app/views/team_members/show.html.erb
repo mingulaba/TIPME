@@ -1,0 +1,7 @@
+<h1>This is a show page</h1>
+
+<%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}} do |f| %>
+        <%= f.input :tip, placeholder: "Your tip" %>
+        <%= f.input :review, placeholder: "Add your feedback" %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      <% end %>
