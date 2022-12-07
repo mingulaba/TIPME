@@ -1,6 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "Dashboard", root_path, class: "navbar-brand text-style" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag("tipme-3.png", class: "navbar-logo", :alt => "tipme logo") %>
+    <% end %>
 
     <div class="" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
