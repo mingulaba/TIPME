@@ -1,8 +1,7 @@
 <div class="card-1 search-card">
-  <%= form_with url: team_members_path, method: :get, html: {class:
-      "form-card", data: {search_team_members_target: "form"}} do |f| %>
+  <%= form_with url: team_members_path, method: :get, html: {data: {search_team_members_target: "form"}} do |f| %>
       <%= f.text_field :query,
-                      class: "form-control",
+                      class: "form-control form-style",
                       placeholder: "Type the name of a team member",
                       value: params[:query],
                       data: {

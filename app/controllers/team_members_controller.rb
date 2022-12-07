@@ -1,6 +1,8 @@
 class TeamMembersController < ApplicationController
   def index
-    @team_members = TeamMember.order(first_name: :asc)
+    @team_members = policy_scope(TeamMember)
+
+    @team_members = @team_members.order(first_name: :asc)
 
     @team_members = @team_members.where("first_name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
 
