@@ -1,0 +1,47 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <div class="bg-01">
+
+    <!-- Section: Design Block -->
+    <section class="text-center">
+      <!-- Background image -->
+
+      <!-- Background image -->
+      <div class="first-div">
+        <h2>Let's create a<br>New Restaurant 🍺</h2>
+      </div>
+        <div class="second-div">
+          <div class="card-1 card-body py-5 px-md-5"> <!-- HERE -->
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                <h2 class="fw-bold mb-5">New Restaurant</h2>
+
+                <form class="">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div>
+                      <%= f.input :name, label: false, input_html: { class: "form-style", placeholder: "Name ..." } %>
+                  </div>
+                  <div>
+                      <%= f.input :address, label: false, input_html: { class: "form-style", placeholder: "Adress ..." } %>
+                  </div>
+                  <div>
+                      <%= f.input :category, label: false, input_html: { class: "form-style", placeholder: "Category ..." } %>
+                  </div>
+                  <div>
+                      <%= f.input :phone_number, label: false, input_html: { class: "form-style", placeholder: "Phone number ..." } %>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <button type="button">Create</button>
+      <div class="form-actions">
+        <%= f.button :submit, class: "create-button" %>
+      </div>
+
+    </section>
+    <!-- Section: Design Block -->
+  </div>
+<% end %>
