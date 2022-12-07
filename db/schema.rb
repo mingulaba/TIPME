@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_07_133110) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +45,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_133110) do
     t.float "av_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["restaurant_id"], name: "index_team_members_on_restaurant_id"
+    t.index ["user_id"], name: "index_team_members_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,4 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_133110) do
 
   add_foreign_key "restaurants", "users"
   add_foreign_key "tables", "team_members"
+  add_foreign_key "team_members", "restaurants"
+  add_foreign_key "team_members", "users"
 end
