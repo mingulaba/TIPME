@@ -1,3 +1,5 @@
+// Specific CSS for your restaurants_new-page
+
 body {
   min-height: 100vh;
   background-image: url("BG.png");
@@ -6,14 +8,16 @@ body {
 
 .first-div {
   margin-top: 2.5em;
-  margin-bottom: 4.5em;
   margin-left: 0.8em;
   margin-right: 0.8em;
   text-align: left;
-  color: white;
   font-weight: bold;
 }
 
-.button-1 {
-  background-image: url("button1.png");
+.second-div {
+  margin-top: 2.5em;
+}
+
+h2 {
+  color: white;
 }
