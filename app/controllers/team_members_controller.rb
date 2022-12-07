@@ -6,6 +6,7 @@ class TeamMembersController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:restaurant_id])
     @team_member = TeamMember.find(params[:id])
+    authorize @team_member
     @table = Table.new
   end
 end

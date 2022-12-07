@@ -42,3 +42,20 @@ button {
   border: 1px solid;
   border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
+
+.btn {
+  width: 123px;
+  height: 42px;
+  background: url(app/assets/visa.jpg);
+  border-radius: 20px;
+  margin-top: 1em;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #E87121 22.24%, #242B31 85.59%);
+  box-shadow: 3px 3px 6px 0px #04040449 inset;
+  color: white;
+}
+
+
+.container {
+  background-image: url("small_bg.svg");
+}

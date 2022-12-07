@@ -1,16 +1,22 @@
 <h1>This is a show page</h1>
 <link href="css/star-rating.css" rel="stylesheet">
+<link href="application.scss" rel="stylesheet">
+
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-
 <%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}, remote: true} do |f| %>
-        <h5>Amount in the bill</h5>
-        <%= f.input :tip, placeholder: "Your tip", class: "tip-input" %>
-        <%= f.input :review, placeholder: "Add your feedback" %>
+        <%= f.input :tip, placeholder: "Your tip", class: "form-style tip-input  " %>
+        <%= link_to "10%", "#", class: "btn btn-gradient" %>
+        <%= f.input :review, placeholder: "Add your feedback", class: "form-style"%>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+        <div>
+         <%= f.submit "Add" %>
+        <%= f.submit "Add", class: "btn" %>
         <%= f.submit "Add", class: "btn btn-primary" %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+        <%= f.submit "Add", class: "btn btn-primary form-style" %>
+        </div>
       <% end %>
     </div>
   </div>
