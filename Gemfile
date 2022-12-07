@@ -65,7 +65,7 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-
+gem "dotenv-rails", groups: [:development, :test]
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
