@@ -11,43 +11,43 @@ require 'date'
 # Restaurant.destroy_all
 # User.destroy_all
 
-user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: 123456, email: "cardiganman@sweater.com")
+user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com")
 user_1.save
 
-user_2 = User.new(first_name: "Phillip", last_name: "Johnson", password: 123456, email: "allstarqb@footballstuf.com")
+user_2 = User.new(first_name: "Phillip", last_name: "Johnson", password: "123456", email: "allstarqb@footballstuf.com")
 user_2.save
 
-user_3 = User.new(first_name: "Sally", last_name: "Strings", password: 123456, email: "cuteasabutton@funny.com")
+user_3 = User.new(first_name: "Sally", last_name: "Strings", password: "123456", email: "cuteasabutton@funny.com")
 user_3.save
 
-user_4 = User.new(first_name: "George", last_name: "Basshoff", password: 123456, email: "gorillaboy@amazon.com")
+user_4 = User.new(first_name: "George", last_name: "Basshoff", password: "123456", email: "gorillaboy@amazon.com")
 user_4.save
 
-user_5 = User.new(first_name: "Karoline", last_name: "Riviera", password: 123456, email: "partygirl555@funtimes.com")
+user_5 = User.new(first_name: "Karoline", last_name: "Riviera", password: "123456", email: "partygirl555@funtimes.com")
 user_5.save
 
-user_6 = User.new(first_name: "Stevey", last_name: "Baldwin", password: 123456, email: "justanotherbaldwin@numberfive.com")
+user_6 = User.new(first_name: "Stevey", last_name: "Baldwin", password: "123456", email: "justanotherbaldwin@numberfive.com")
 user_6.save
 
-user_7 = User.new(first_name: "Chester", last_name: "Mayfieldy", password: 123456, email: "mayfieldy@gopro.com")
+user_7 = User.new(first_name: "Chester", last_name: "Mayfieldy", password: "123456", email: "mayfieldy@gopro.com")
 user_7.save
 
-user_8 = User.new(first_name: "David", last_name: "Schriner", password: 123456, email: "lighthousebroght@bluelight.com")
+user_8 = User.new(first_name: "David", last_name: "Schriner", password: "123456", email: "lighthousebroght@bluelight.com")
 user_8.save
 
-user_9 = User.new(first_name: "Tobias", last_name: "Fiellmann", password: 123456, email: "newsunglasses@spectacles.com")
+user_9 = User.new(first_name: "Tobias", last_name: "Fiellmann", password: "123456", email: "newsunglasses@spectacles.com")
 user_9.save
 
-user_10 = User.new(first_name: "Sarah", last_name: "Donaldson", password: 123456, email: "myredcard@fastlane.com")
+user_10 = User.new(first_name: "Sarah", last_name: "Donaldson", password: "123456", email: "myredcard@fastlane.com")
 user_10.save
 
-user_11 = User.new(first_name: "Chloe", last_name: "Festjacke", password: 123456, email: "tightjacket@luxurious.com")
+user_11 = User.new(first_name: "Chloe", last_name: "Festjacke", password: "123456", email: "tightjacket@luxurious.com")
 user_11.save
 
-user_12 = User.new(first_name: "Ulf", last_name: "Weiner", password: 123456, email: "oscarmeyer@weiner.com")
+user_12 = User.new(first_name: "Ulf", last_name: "Weiner", password: "123456", email: "oscarmeyer@weiner.com")
 user_12.save
 
-user_13 = User.new(first_name: "Galvin", last_name: "Totbringer", password: 123456, email: "lastmanstanding@takecareofit.com")
+user_13 = User.new(first_name: "Galvin", last_name: "Totbringer", password: "123456", email: "lastmanstanding@takecareofit.com")
 user_13.save
 
 restaurant = Restaurant.new(name: "The Delicatessen", user_id: 1)
