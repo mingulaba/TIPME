@@ -4,6 +4,7 @@
 # Examples:
 require 'faker'
 require 'date'
+'open-uri'
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
@@ -12,6 +13,7 @@ require 'date'
 # User.destroy_all
 
 user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com")
+user_1.photo.attach(io: file, filename: "", content_type: "image/")
 user_1.save
 
 user_2 = User.new(first_name: "Phillip", last_name: "Johnson", password: "123456", email: "allstarqb@footballstuf.com")
