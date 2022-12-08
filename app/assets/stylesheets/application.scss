@@ -43,6 +43,17 @@ button {
   border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
 
+.form-style-tip {
+  margin-left: 3%;
+  width: 93%;
+  height: 51px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
 .form-style-review {
   margin-top: 15px;
   margin-left: 3%;
@@ -55,8 +66,23 @@ button {
   border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
 
-.btn {
+.form-style-star {
+  margin-top: 15px;
+  margin-bottom: 15px;
   margin-left: 3%;
+  width: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.btn {
   width: 80px;
   height: 40px;
   background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
@@ -66,21 +92,30 @@ button {
   border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
 
+.tips {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .btn:hover {
   background-color:#002ead;
   transition: 0.7s;
 }
 
 
-.container {
-  background-image: url("small_bg.svg");
-}
+// .container-form {
+//   background-image: url("small_bg.svg");
+//   background-size: cover;
+// }
 
 .pay1 {
   background-image: asset-url("visa.jpg");
   background-size: cover;
   height: 40px;
   width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
 }
 
 .pay2 {
@@ -88,6 +123,9 @@ button {
   background-size: cover;
   height: 40px;
   width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
 }
 
 .pay3 {
@@ -95,6 +133,9 @@ button {
   background-size: cover;
   height: 40px;
   width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
 }
 
 .pay4 {
@@ -102,4 +143,21 @@ button {
   background-size: cover;
   height: 40px;
   width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.payment_cards {
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 93%;
+  height: 60px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
