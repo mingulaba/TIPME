@@ -11,7 +11,7 @@ require 'date'
 # Restaurant.destroy_all
 # User.destroy_all
 
-user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com")
+user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com", admin: true)
 user_1.save
 
 user_2 = User.new(first_name: "Phillip", last_name: "Johnson", password: "123456", email: "allstarqb@footballstuf.com")
