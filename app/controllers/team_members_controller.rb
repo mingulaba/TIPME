@@ -27,5 +27,3 @@ class TeamMembersController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end
-
-# restaurant_team_member GET    /restaurants/:restaurant_id/team_members/:id(.:format)                                            team_members#show

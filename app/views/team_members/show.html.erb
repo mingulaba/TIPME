@@ -1,8 +1,17 @@
 
 <link href="css/star-rating.css" rel="stylesheet">
 <link href="application.scss" rel="stylesheet">
-<h1>Here should be an avatar</h1>
-
+<div style="margin: 30px">
+  <div class="d-flex justify-content-center">
+    <%= cl_image_tag(@team_member.photo.key, class: "avatar-large")%>
+  </div>
+  <div class="d-flex justify-content-center" style="margin: 10px">
+    <%= image_tag('twolines', alt: 'two lines', class:'')%>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div><h2><%= @team_member.first_name %></h2></div>
+  </div>
+</div>
 <div class="card-1 card-body py-5 px-md-5">
   <div class="row d-flex justify-content-center">
     <%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}, remote: true} do |f| %>
