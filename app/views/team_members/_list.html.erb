@@ -1,0 +1,8 @@
+<div class="card-1 list-card" data-search-team-members-target="list">
+  <% team_members.each do |team_member| %>
+    <div class='team_member_card'>
+      <%= image_tag('Avatar', alt: 'User\'s avatar', class: 'avatar') %>
+      <p><%= team_member.first_name %> <%= team_member.last_name %></p>
+    </div>
+  <% end %>
+</div>
