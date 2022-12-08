@@ -1,0 +1,34 @@
+
+<link href="css/star-rating.css" rel="stylesheet">
+<link href="application.scss" rel="stylesheet">
+<h1>Here should be an avatar</h1>
+
+<div class="card-1 card-body py-5 px-md-5">
+  <div class="row d-flex justify-content-center">
+    <%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}, remote: true} do |f| %>
+        <div style="margin-top: -35px">
+        <%= f.input :tip, label: false, input_html: { class: "form-style-tip", placeholder: "Your tip" } %>
+        </div>
+        <div class="tips">
+          <%= link_to "5%", "#", class: "btn" %>
+          <%= link_to "10%", "#", class: "btn" %>
+          <%= link_to "15%", "#", class: "btn btn-gradient" %>
+        </div>
+        <%= f.input :review, label: false, input_html: { class: "form-style-review", placeholder: "Add your feedback"}%>
+        <div class="form-style-star">
+          <div style="margin-top: 20px">
+            <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}}%>
+          </div>
+        </div>
+      <div class="payment_cards" style="margin-bottom: -20px">
+        <%= f.submit "", class: "pay1" %>
+        <%= f.submit "", class: "pay2"%>
+        <%= f.submit "", class: "pay3" %>
+        <%= f.submit "", class: "pay4" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%# <%= f.input :name, label: false, input_html: { class: "form-style", placeholder: "Name ..." } %>
