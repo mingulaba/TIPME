@@ -43,19 +43,63 @@ button {
   border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
 
-.btn {
-  width: 123px;
-  height: 42px;
-  background: url(app/assets/visa.jpg);
-  border-radius: 20px;
-  margin-top: 1em;
+.form-style-review {
+  margin-top: 15px;
+  margin-left: 3%;
+  width: 93%;
+  height: 100px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
   border: 1px solid;
-  border-image-source: linear-gradient(135.83deg, #E87121 22.24%, #242B31 85.59%);
-  box-shadow: 3px 3px 6px 0px #04040449 inset;
-  color: white;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.btn {
+  margin-left: 3%;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.btn:hover {
+  background-color:#002ead;
+  transition: 0.7s;
 }
 
 
 .container {
   background-image: url("small_bg.svg");
+}
+
+.pay1 {
+  background-image: asset-url("visa.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+}
+
+.pay2 {
+  background-image: asset-url("mastercard.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+}
+
+.pay3 {
+  background-image: asset-url("apple.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+}
+
+.pay4 {
+  background-image: asset-url("google.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
 }

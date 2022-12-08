@@ -1,23 +1,27 @@
-<h1>This is a show page</h1>
+
 <link href="css/star-rating.css" rel="stylesheet">
 <link href="application.scss" rel="stylesheet">
-
+<h1>Here should be an avatar</h1>
 
 <div class="container">
 <%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}, remote: true} do |f| %>
-        <%= f.input :tip, placeholder: "Your tip", class: "form-style tip-input  " %>
-        <%= link_to "10%", "#", class: "btn btn-gradient" %>
-        <%= f.input :review, placeholder: "Add your feedback", class: "form-style"%>
+        <%= f.input :tip, label: false, input_html: { class: "form-style", placeholder: "Your tip" } %>
+        <%= link_to "5%", "#", class: "btn" %>
+        <%= link_to "10%", "#", class: "btn" %>
+        <%= link_to "15%", "#", class: "btn btn-gradient" %>
+        <%= f.input :review, label: false, input_html: { class: "form-style-review", placeholder: "Add your feedback"}%>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
         <div>
-         <%= f.submit "Add" %>
-        <%= f.submit "Add", class: "btn" %>
-        <%= f.submit "Add", class: "btn btn-primary" %>
-        <%= f.submit "Add", class: "btn btn-primary" %>
-        <%= f.submit "Add", class: "btn btn-primary" %>
-        <%= f.submit "Add", class: "btn btn-primary form-style" %>
+         <%= f.submit "", class: "pay1" %>
+        <%= f.submit "", class: "pay2"%>
+        <%= f.submit "", class: "pay3" %>
+        <%= f.submit "", class: "pay4" %>
+
         </div>
       <% end %>
     </div>
   </div>
  </div>
+
+
+<%# <%= f.input :name, label: false, input_html: { class: "form-style", placeholder: "Name ..." } %>
