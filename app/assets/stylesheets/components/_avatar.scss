@@ -4,10 +4,13 @@
   background: rgba(217, 217, 217, 0.24);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
-// .avatar-large {
-//   width: 56px;
-//   border-radius: 50%;
-// }
+
+.avatar-large {
+  width: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
 // .avatar-bordered {
 //   width: 40px;
 //   border-radius: 50%;
