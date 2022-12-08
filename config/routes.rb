@@ -8,3 +8,4 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :team_members, only: :index
 end
+# root "articles#index"
