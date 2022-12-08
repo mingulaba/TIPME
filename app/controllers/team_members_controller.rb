@@ -1,5 +1,4 @@
 class TeamMembersController < ApplicationController
-
   #find a team_member with params
   #store it
 
@@ -8,6 +7,8 @@ class TeamMembersController < ApplicationController
     @team_member = TeamMember.find(params[:id])
     authorize @team_member
     @table = Table.new
+  end
+
   def index
     @team_members = policy_scope(TeamMember)
 
@@ -21,6 +22,5 @@ class TeamMembersController < ApplicationController
     end
   end
 end
-
 
 # restaurant_team_member GET    /restaurants/:restaurant_id/team_members/:id(.:format)                                            team_members#show
