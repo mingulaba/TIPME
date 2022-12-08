@@ -1,8 +1,10 @@
 <div class="card-1 list-card" data-search-team-members-target="list">
   <% team_members.each do |team_member| %>
-    <div class='team_member_card'>
-      <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
-      <p><%= team_member.first_name %> <%= team_member.last_name %></p>
-    </div>
+    <%= link_to restaurant_team_member_path(@restaurant, team_member) do %>
+      <div class='team_member_card'>
+        <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+        <p><%= team_member.first_name %> <%= team_member.last_name %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
