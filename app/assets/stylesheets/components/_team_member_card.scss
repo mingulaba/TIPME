@@ -1,0 +1,19 @@
+@import "avatar";
+
+.team_member_card {
+  display: flex;
+  align-items: center;
+  padding: 0.4em 1.5em;
+  box-sizing: border-box;
+  background: linear-gradient(134.17deg, rgba(63, 72, 80, 0.5) 4.98%, rgba(54, 62, 70, 0.6) 94.88%);
+  border-radius: 20px;
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.6), 13px 14px 12px -6px rgba(35, 40, 45, 0.6);
+}
+
+.team_member_card p {
+  margin: 0;
+  position: absolute;
+  left: 7em;
+  font-size: 20px !important;
+  color: #8E98A1 !important;
+}

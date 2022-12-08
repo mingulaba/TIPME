@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :team_members do
     resources :tables, only: :create
   end
+  resources :team_members, only: :index
 end
+# root "articles#index"
