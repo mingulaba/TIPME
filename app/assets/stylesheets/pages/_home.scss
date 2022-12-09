@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+h2 {
+  color: #8E98A1 !important;
+  font-size: 40px;
+}
+
+p {
+  color: #B9B9B9;
+  font-size: 10px;
+}
+
+h3 {
+  color: #00000079;
+  margin-top: 15px;
+}
+
+.qr-code {
+  margin-top: 40px;
+  transition: transform .7s ease-in-out;
+}
+.qr-code:hover {
+  transform: rotate(360deg);
+}
+
+.small-icons {
+  margin-top: 30px;
+}
+
+.fist-card {
+  margin-top: 30px;
+}

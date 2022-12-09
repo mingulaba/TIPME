@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
-  resources :restaurants, only: %i[new create]
   # root "articles#index"
-  resources :restaurants, only: :new do
-    resources :team_members, only: :show do
+
+  resources :restaurants, only: %i[new create] do
+    resources :team_members, only: %i[index show] do
       get "payment_confirm", to: "pages#payment_confirm"
     end
   end
