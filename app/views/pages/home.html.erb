@@ -27,6 +27,6 @@
       <%= image_tag('small-icons', alt: 'small icons', class: 'qr-code')%>
     </div>
     <div class="d-flex justify-content-center" style="line-height: 58px">
-      <%= link_to "Place Camera Code", team_members_path, label: false, class: "btn2" %>
+      <%= link_to "Place Camera Code", restaurant_team_members_path(Restaurant.first), label: false, class: "btn2" %>
     </div>
   </div>
