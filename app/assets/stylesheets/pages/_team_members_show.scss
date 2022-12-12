@@ -149,3 +149,9 @@ button {
   border: 1px solid;
   border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
 }
+
+.avatar-large {
+  height: 200px;
+  width: 175px;
+  object-fit: cover;
+}
