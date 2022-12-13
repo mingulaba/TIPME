@@ -28,4 +28,8 @@ class RestaurantPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def dashboard?
+    user
+  end
 end

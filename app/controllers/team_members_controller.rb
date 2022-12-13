@@ -1,5 +1,6 @@
 class TeamMembersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_team_member, only: %i[show destroy]
   before_action :set_restaurant, only: %i[index show]
 
   def index
@@ -16,10 +17,12 @@ class TeamMembersController < ApplicationController
   end
 
   def show
-    @team_member = TeamMember.find(params[:id])
-    authorize @team_member
     @table = Table.new
   end
+
+  def destroy
+    @team_member.destroy
+    redirect_to dashboard_path, status: :see_other
 
   def new
     @team_member = TeamMember.new
@@ -44,20 +47,16 @@ class TeamMembersController < ApplicationController
     redirect_to team_members_path(@team_members)
   end
 
-  def destroy
-    auhorize @team_members
-    @team_members.destroy
-    @team_member = TeamMember.find(params[:id])
-    authorize @team_member
-    @table = Table.new
-  end
-
   def profile
     @profile = TeamMember.find_by(user_id: current_user.id)
     authorize @profile
   end
 
   private
+
+  def set_team_member
+    @team_member = TeamMember.find(params[:id])
+    authorize @team_member
 
   def save_params
     params.require(:team_member).permit(:first_name, :last_name, :birth_date, :introduction)
