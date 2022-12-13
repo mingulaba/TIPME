@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home payment_confirm ]
 
   def home
-    # @restaurant = Restaurant.find(id: 1)
+    #@restaurant = Restaurant.find(id: 1)
   end
 
   def payment_confirm

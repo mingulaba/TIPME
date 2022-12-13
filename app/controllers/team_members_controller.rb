@@ -16,21 +16,23 @@ class TeamMembersController < ApplicationController
   end
 
   def show
-    authorize @team_members
-    @team_members = TeamMember.new
+    @team_member = TeamMember.find(params[:id])
+    authorize @team_member
+    @table = Table.new
   end
 
   def new
-    @team_members = TeamMember.new
-    authorize @team_members
+    @team_member = TeamMember.new
+    authorize @team_member
   end
 
   def create
-    @team_members = TeamMember.new(team_members_params)
-    @team_members.user = current_user
-    authorize @team_members
-    if @team_members.save
-      redirect_to team_members_path(@team_members)
+    @team_member = TeamMember.new(team_member_params)
+    @team_member.user = User.find(first_name: @team_member.first_name)
+    authorize @team_member
+    @team_member.restaurant = params[:id]
+    if @team_member.save
+      redirect_to team_member_path(@team_member)
     else
       render :new, status: :unprocessable_entity
     end
@@ -52,12 +54,15 @@ class TeamMembersController < ApplicationController
 
   private
 
+  def save_params
+    params.require(:team_member).permit(:first_name, :last_name, :birth_date, :introduction)
+  end
 
   def set_team_members
     @team_members = TeamMember.find(params[:id])
+  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
-
   end
 end
