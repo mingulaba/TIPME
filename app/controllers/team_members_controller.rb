@@ -20,6 +20,12 @@ class TeamMembersController < ApplicationController
     @table = Table.new
   end
 
+
+  def destroy
+    @team_member.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   def new
     @user = current_user
     @team_member = TeamMember.new
@@ -59,6 +65,15 @@ class TeamMembersController < ApplicationController
   def set_team_member
     @team_member = TeamMember.find(params[:id])
     authorize @team_member
+  end
+
+  def save_params
+    params.require(:team_member).permit(:first_name, :last_name, :birth_date, :introduction)
+  end
+
+  def set_team_members
+    @team_members = TeamMember.find(params[:id])
+
   end
 
   def set_restaurant
