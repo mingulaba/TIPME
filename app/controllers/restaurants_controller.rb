@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @restaurant = Restaurant.new
     authorize @restaurant
   end
@@ -22,7 +23,6 @@ class RestaurantsController < ApplicationController
   end
 
   private
-
 
   def restaurant_params
     params.require(:restaurant).permit(:name)
