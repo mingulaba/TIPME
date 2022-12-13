@@ -31,13 +31,12 @@ p{
   margin: 0 auto;
 }
 
-.reviews {
+.reviews{
   text-align: left;
 }
-.recent {
-  margin-top: -5px;
-}
+
 
 li {
-  padding: 0;
+  display: flex;
+  align-items: flex-start;
 }
