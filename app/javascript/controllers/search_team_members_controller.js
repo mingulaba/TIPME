@@ -8,6 +8,7 @@ export default class extends Controller {
     console.log(this.formTarget)
     console.log(this.inputTarget)
     console.log(this.listTarget)
+    console.log("From search team member")
   }
 
   update() {
@@ -15,7 +16,7 @@ export default class extends Controller {
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
-        this.listTarget.outerHTML = data
+        this.listTarget.innerHTML = data
     })
   }
 }

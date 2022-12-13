@@ -1,6 +1,10 @@
 <div class="first-div">
     <div class="d-flex justify-content-center">
-      <%= cl_image_tag(@team_member.photo.key, class: 'avatar1') %>
+      <% if @team_member.photo.key %>
+        <%= cl_image_tag(@team_member.photo.key, class: 'avatar1') %>
+      <% else %>
+        <%= image_tag('Avatar.png', class: 'avatar1') %>
+      <% end %>
     </div>
     <div class="d-flex justify-content-center" style="margin: 15px">
       <%= image_tag('twolines.png', alt: 'two lines', class:'lines2')%>
