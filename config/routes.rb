@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :team_members, only: %i[destroy] do
     resources :tables, only: :create
   end
-  
-  get '/profile', to: 'pages#profile'
+
+  resources :team_members, only: :index
+
+  get 'users/profile', to: 'users#profile'
 end
