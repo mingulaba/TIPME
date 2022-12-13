@@ -21,5 +21,11 @@ Rails.application.routes.draw do
 
   resources :team_members, only: :index
 
+
+  get '/profile', to: 'pages#profile'
+
 end
 # root "articles#index"
+
+
+# /team_members/:team_member_id/profile
