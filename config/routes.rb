@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: %i[new create] do
     resources :team_members, only: %i[index show new create] do
-
+    end
+  end
 
   resources :restaurants, only: %i[new create] do
     resources :team_members, only: %i[index show] do

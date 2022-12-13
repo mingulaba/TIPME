@@ -16,8 +16,9 @@ class TeamMembersController < ApplicationController
   end
 
   def show
-    authorize @team_members
-    @team_members = TeamMember.new
+    @team_member = TeamMember.find(params[:id])
+    authorize @team_member
+    @table = Table.new
   end
 
   def new
@@ -60,6 +61,7 @@ class TeamMembersController < ApplicationController
 
   def set_team_members
     @team_members = TeamMember.find(params[:id])
+  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
