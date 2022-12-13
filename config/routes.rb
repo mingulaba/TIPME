@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :team_members, only: :index
 
 
-  get '/profile', to: 'pages#profile'
+  get 'users/profile', to: 'users#profile'
 
 end
 # root "articles#index"

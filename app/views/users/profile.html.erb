@@ -1,0 +1,20 @@
+<h1>This is a dashboard of a team member</h1>
+
+<h2>Hello,<br><%= @user.team_member.first_name %> 👋🏼</h2>
+
+<div class="card-1 card-body py-5 px-md-5">
+  <div class="row d-flex justify-content-center">
+   <%= cl_image_tag(@user.team_member.photo.key, class: "avatar1")%>
+   <%= @user.team_member.first_name %>
+   <%= @user.team_member.last_name %>
+  </div>
+</div>
+<ul class="list-group">
+  <% @user.team_member.tables.each do |table| %>
+    <li class="list-group-item"><%= table.review %></li>
+  <% end %>
+    <% @user.team_member.tables.each do |table| %>
+    <li class="list-group-item"><%= table.tip %></li>
+  <% end %>
+</ul>
+<br>
