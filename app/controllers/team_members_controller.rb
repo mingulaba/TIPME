@@ -21,6 +21,11 @@ class TeamMembersController < ApplicationController
     @table = Table.new
   end
 
+  def profile
+    @profile = TeamMember.find_by(user_id: current_user.id)
+    authorize @profile
+  end
+
   private
 
   def set_restaurant

@@ -15,5 +15,10 @@ Rails.application.routes.draw do
     resources :tables, only: :create
   end
   resources :team_members, only: :index
+
+  get '/profile', to: 'pages#profile'
 end
 # root "articles#index"
+
+
+# /team_members/:team_member_id/profile

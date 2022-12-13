@@ -8,4 +8,8 @@ class PagesController < ApplicationController
   def payment_confirm
     @team_member = TeamMember.find(params[:team_member_id])
   end
+
+  def profile
+    @team_member = current_user.team_member
+  end
 end
