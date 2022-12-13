@@ -16,6 +16,35 @@ class TeamMembersController < ApplicationController
   end
 
   def show
+    authorize @team_members
+    @team_members = TeamMember.new
+  end
+
+  def new
+    @team_members = TeamMember.new
+    authorize @team_members
+  end
+
+  def create
+    @team_members = TeamMember.new(team_members_params)
+    @team_members.user = current_user
+    authorize @team_members
+    if @team_members.save
+      redirect_to team_members_path(@team_members)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @team_members.update(team_members_params)
+    authorize @team_members
+    redirect_to team_members_path(@team_members)
+  end
+
+  def destroy
+    auhorize @team_members
+    @team_members.destroy
     @team_member = TeamMember.find(params[:id])
     authorize @team_member
     @table = Table.new
@@ -23,7 +52,12 @@ class TeamMembersController < ApplicationController
 
   private
 
+
+  def set_team_members
+    @team_members = TeamMember.find(params[:id])
+
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+
   end
 end

@@ -6,15 +6,9 @@
 
     <div class="" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li class="nav-item">
             <%= image_tag("Avatar.png", size: "45x45", class: "layout-drop dropdown-toggle", :alt => "menu logo", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
       </ul>
     </div>
   </div>
