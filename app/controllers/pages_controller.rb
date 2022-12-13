@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @user = current_user
     @team_member = TeamMember.find(params[:team_member_id])
   end
-  
+
   def dashboard
     @user = current_user
     @restaurants = Restaurant.where(user: current_user)
