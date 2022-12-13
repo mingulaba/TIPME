@@ -28,4 +28,8 @@ class TeamMemberPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def dashboard?
+    user
+  end
 end
