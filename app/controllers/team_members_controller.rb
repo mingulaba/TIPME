@@ -4,6 +4,7 @@ class TeamMembersController < ApplicationController
   before_action :set_restaurant, only: %i[index show new create]
 
   def index
+    @user = current_user
     @team_members = policy_scope(TeamMember)
 
     @team_members = @restaurant.team_members.order(first_name: :asc)
@@ -17,6 +18,7 @@ class TeamMembersController < ApplicationController
   end
 
   def show
+    @user = current_user
     @table = Table.new
   end
 
