@@ -1,0 +1,39 @@
+<div class="bg-01">
+  <!-- Section: Design Block -->
+  <section class="text-center">
+
+    <!-- First Div -->
+    <div class="first-div" style="margin-bottom: 70px">
+      <h2>Let's create a<br>New Team Member 🤘</h2>
+    </div>
+
+    <!-- Second Div -->
+    <div class="second-div">
+      <div class="card-1 card-body py-5 px-md-5"> <!-- HERE -->
+        <%= simple_form_for [@restaurant, @team_member] data: { controller: 'flatpickr' } do |f| %>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+              <h3 class="fw-bold mb-5" style="margin-top: -15px">New Member</h3>
+            </div>
+            <div class="d-flex" style="margin-top: -20px">
+              <%= f.input :first_name, label: false, input_html: { class: "form-style1", placeholder: "First Name ..." } %>
+              <%= f.input :last_name, label: false, input_html: { class: "form-style1", placeholder: "Last Name ..." } %>
+            </div>
+            <div>
+              <%# <%= f.input :birth_date, label: false, input_html: { class: "form-style", placeholder: "Date of birth ...", data: { flatpickr_target: "startTime" } } %>
+              <%= f.input :birth_date as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+              <%#= f.submit 'When is your Birthday?' %>
+            </div>
+          </div>
+          <div class="form-actions" style="margin-bottom: -20px">
+            <%= f.button :submit,"Create", class: "btn1" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+    <!-- Section: Design Block -->
+
+  </section>
+</div>

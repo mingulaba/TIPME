@@ -17,6 +17,7 @@
     <h4 style="text-align: center;">Average rating<br>of your Team<br>Members</h4>
   </div>
 </div>
+
 <div class="card-2">
   <h3 style="margin: 0.8em;">Team Members</h3>
   <div>
@@ -29,6 +30,16 @@
           <span><%= team_member.first_name %> <%= team_member.last_name %></span>
         </div>
   </div>
+
+<div>
+  <h3>Team Members</h3>
+  <% @team_members.each do |team_member| %>
+  <% if team_member.photo.key %>
+    <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+  <% else %>
+    <%= image_tag('Avatar.png', class: 'avatar') %>
+  <% end %>
+    <p><%= team_member.first_name %> <%= team_member.last_name %></p>
   <% end %>
 </div>
 </div>
