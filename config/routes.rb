@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :team_members, only: :destroy do
+  resources :team_members, only: %i[destroy] do
     resources :tables, only: :create
   end
 
