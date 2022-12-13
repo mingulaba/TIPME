@@ -7,12 +7,13 @@ require 'date'
 require 'open-uri'
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+puts "Deleting database"
 TeamMember.destroy_all
 Restaurant.destroy_all
 User.destroy_all
+puts "Creating users"
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670423828/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg")
-user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com")
+user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com", admin: true)
 user_1.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670423828/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg", content_type: "image/jpg")
 user_1.save
 
@@ -76,8 +77,11 @@ user_13 = User.new(first_name: "Galvin", last_name: "Totbringer", password: "123
 user_13.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424194/Good-Server-Tips-and-Tricks_imqoke.jpg", content_type: "image/jpg")
 user_13.save
 
-restaurant = Restaurant.new(name: "The Delicatessen", user_id: 1)
-restaurant.save
+puts "Creating Restaurant"
+restaurant = Restaurant.new(name: "The Delicatessen", user_id: User.first.id)
+restaurant.save!
+
+puts "Creating team members"
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670837225/Keshe_lookalike_mtbpr3.jpg")
 team_member_1 = TeamMember.new(first_name: "Phillip", last_name: "Johnson", birth_date: Date.new(2001, 4, 23), restaurant_id: 1, user_id: 2, introduction: "I would like to save up for fun")

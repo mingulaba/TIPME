@@ -4,6 +4,8 @@
   </div>
   <div class="main-block" data-controller="search-team-members">
     <%= render 'form' %>
-    <%= render 'list', team_members: @team_members %>
+    <div class="card-1 list-card" data-search-team-members-target="list">
+      <%= render 'list', team_members: @team_members %>
+    </div>
   </div>
 </div>

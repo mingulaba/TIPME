@@ -1,0 +1,11 @@
+<div class="card-1">
+  <%= simple_form_for @user, html: {data: {restaurant_data_target: "form"}} do |f| %>
+      <%= f.input :restaurant,
+                  collection: @restaurants,
+                  class: "form-control form-style",
+                  label: false,
+                  selected: true,
+                  value: params[:query],
+                  input_html: {data: {restaurant_data_target: "input", action: "input->restaurant-data#handleChange"} } %>
+  <% end %>
+</div>

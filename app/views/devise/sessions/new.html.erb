@@ -12,9 +12,15 @@
         <h2>Welcome 👋</h2>
         <div class="date">
           <script>
-          date = new Date().toLocaleDateString();
+          const options = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }
+          date = new Date().toLocaleDateString("en-GB", options);
           document.write(date);
-        </script>
+          </script>
       </div>
       </div>
       <!-- Second DIV FORM-INPUT -->

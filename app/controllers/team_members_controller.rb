@@ -1,8 +1,10 @@
 class TeamMembersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_restaurant, only: %i[index show]
+  before_action :set_team_member, only: %i[show destroy]
+  before_action :set_restaurant, only: %i[index show new create]
 
   def index
+    @user = current_user
     @team_members = policy_scope(TeamMember)
 
     @team_members = @restaurant.team_members.order(first_name: :asc)
@@ -16,22 +18,23 @@ class TeamMembersController < ApplicationController
   end
 
   def show
-    @team_member = TeamMember.find(params[:id])
-    authorize @team_member
+    @user = current_user
     @table = Table.new
   end
 
   def new
-    @team_members = TeamMember.new
-    authorize @team_members
+    @user = current_user
+    @team_member = TeamMember.new
+    authorize @team_member
   end
 
   def create
-    @team_members = TeamMember.new(team_members_params)
-    @team_members.user = current_user
-    authorize @team_members
-    if @team_members.save
-      redirect_to team_members_path(@team_members)
+    @team_member = TeamMember.new(safe_params)
+    authorize @team_member
+    @team_member.user = User.find_by(first_name: @team_member.first_name, last_name: @team_member.last_name)
+    @team_member.restaurant = @restaurant
+    if @team_member.save
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,11 +47,8 @@ class TeamMembersController < ApplicationController
   end
 
   def destroy
-    auhorize @team_members
-    @team_members.destroy
-    @team_member = TeamMember.find(params[:id])
-    authorize @team_member
-    @table = Table.new
+    @team_member.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   def profile
@@ -58,13 +58,16 @@ class TeamMembersController < ApplicationController
 
   private
 
-
-  def set_team_members
-    @team_members = TeamMember.find(params[:id])
+  def set_team_member
+    @team_member = TeamMember.find(params[:id])
+    authorize @team_member
   end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 
+  def safe_params
+    params.require(:team_member).permit(:first_name, :last_name, :birth_date, :introduction)
   end
 end

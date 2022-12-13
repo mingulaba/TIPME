@@ -3,7 +3,11 @@
 <link href="application.scss" rel="stylesheet">
 <div style="margin: 30px">
   <div class="d-flex justify-content-center">
-    <%= cl_image_tag(@team_member.photo.key, class: "avatar-large")%>
+    <% if @team_member.photo.key %>
+      <%= cl_image_tag(@team_member.photo.key, class: "avatar-large")%>
+    <% else %>
+      <%= image_tag('Avatar.png', class: 'avatar-large') %>
+    <% end %>
   </div>
   <div class="d-flex justify-content-center" style="margin: 10px">
     <%= image_tag('twolines.png', alt: 'two lines', class:'')%>
