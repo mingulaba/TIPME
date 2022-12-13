@@ -17,10 +17,12 @@ Rails.application.routes.draw do
   end
 
   resources :team_members, only: %i[destroy] do
+    member do
+      get 'profile'
+    end
     resources :tables, only: :create
   end
 
-  get 'users/profile', to: 'users#profile'
   resources :team_members, only: :index
 
 end

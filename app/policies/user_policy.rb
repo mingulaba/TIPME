@@ -5,7 +5,7 @@ class UserPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
-  def profile?
-    true
-  end
+  # def profile?
+  #   true
+  # end
 end
