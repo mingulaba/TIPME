@@ -1,25 +1,45 @@
-<h2>Sign up</h2>
+<div>
+    <div>
+      <%= image_tag('logo', alt: 'Tip-Me logo', class: 'logo')%>
+    </div>
+</div>
+
+<div class="first-div1">
+  <h2>Let's create your acccount 🕹</h2>
+    <div class="date">
+      <script>
+      date = new Date().toLocaleDateString();
+      document.write(date);
+      </script>
+    </div>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+<div class="second-div">
+  <div class="card-1 card-body py-5 px-md-5"> <!-- HERE -->
+    <div class="row d-flex justify-content-center">
+      <div class="form-inputs">
+        <div class="d-flex" style="margin-left: 6px">
+            <%= f.input :first_name, label: false, input_html: { class: "form-style1", placeholder: "First Name ..." } %>
+            <%= f.input :last_name, label: false, input_html: { class: "form-style1", placeholder: "Last Name ..." } %>
+        </div>
+        <%= f.input :email, required: true, autofocus: true, label: false, input_html: { class: "form-style", placeholder: "Type your email ...", autocomplete: "email" }%>
+        <%= f.input :password, required: true, label: false, input_html: { class: "form-style", placeholder: "Type your password ...", autocomplete: "new-password", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)} %>
+        <%= f.input :password_confirmation, required: true, label: false, input_html: { class: "form-style", placeholder: "Confirm your password ...", autocomplete: "new-password" } %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= f.input :remember_me, label: false, input_html: { class: "checkbox1" }, as: :boolean if devise_mapping.rememberable? %><p>I am a restaurant manager</p>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+      <div class="d-flex justify-content-center" style="margin-top: -10px">
+        <%= f.button :submit, "Sign up", class: "btn1"%>
+      </div>
+      <div class="d-flex justify-content-center" style="margin-top: 1px">
+        <%= link_to "Sign in", new_user_session_path, class: "text1" %>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>
