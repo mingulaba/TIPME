@@ -30,3 +30,7 @@
       <%= link_to "Place Camera Code", restaurant_team_members_path(Restaurant.first), label: false, class: "btn2" %>
     </div>
   </div>
+
+<!-- LOGOUT BUTTON - TO DELETE FOR PRESENTATION -->
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>
+<!-- LOGOUT BUTTON - TO DELETE FOR PRESENTATION -->
