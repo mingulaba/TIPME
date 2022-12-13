@@ -1,6 +1,6 @@
 class TeamMembersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_team_member, only: %i[show destroy]
+  before_action :set_team_member, only: %i[show destroy profile]
   before_action :set_restaurant, only: %i[index show new create]
 
   def index
@@ -53,8 +53,7 @@ class TeamMembersController < ApplicationController
   end
 
   def profile
-    @profile = TeamMember.find_by(user_id: current_user.id)
-    authorize @profile
+    @user = current_user
   end
 
   private
