@@ -1,27 +1,32 @@
-<%= render "shared/navbar" %>
-<%= button_to "Log out", destroy_user_session_path, method: :delete %>
-<div>
-  <h1>Hello,</h1>
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="first-div">
+  <h2>Hello,</h2>
+  <h2><%= @user.first_name %> <%= @user.last_name %> 🤘</h2>
 </div>
+
 <div>
   <%#= render "form" %>
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="false">Dashboard</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-list" aria-selected="false">Team Members</button>
-    </li>
-    <li>
-    </li>
-  </ul>
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
-      <%= render "figures" %>
-    </div>
-    <div class="tab-pane fade show active" id="pills-list" role="tabpanel" aria-labelledby="pills-list-tab">
-      <%= render "list" %>
+  <div class="second-div">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link button1" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="false">Dashboard</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link button2 active" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-list" aria-selected="false">Team Members</button>
+      </li>
+      <li>
+      </li>
+    </ul>
+  <div>
+
+  <div class="third-div">
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
+        <%= render "figures" %>
+      </div>
+      <div class="tab-pane fade show active" id="pills-list" role="tabpanel" aria-labelledby="pills-list-tab">
+        <%= render "list" %>
+      </div>
     </div>
   </div>
+
 </div>
