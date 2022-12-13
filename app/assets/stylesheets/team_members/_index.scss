@@ -34,3 +34,13 @@
   width: 50px;
   object-fit: cover;
 }
+
+.card-2 {
+  margin-top: 2em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(3px);
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+}
