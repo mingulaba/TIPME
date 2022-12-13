@@ -1,0 +1,157 @@
+
+.card-1 {
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  background: linear-gradient(134.17deg, rgba(63, 72, 80, 0.6) 4.98%, rgba(54, 62, 70, 0.6) 94.88%);
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+button {
+  width: 123px;
+  height: 42px;
+  background: linear-gradient(138.86deg, rgba(232, 113, 33, 0.6) 9.16%, rgba(54, 62, 70, 0.6) 197.3%);
+  border-radius: 20px;
+  margin-top: 1em;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #E87121 22.24%, #242B31 85.59%);
+  box-shadow: 3px 3px 6px 0px #04040449 inset;
+  color: white;
+}
+
+.form-style {
+  margin-left: 3%;
+  width: 93%;
+  height: 51px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.form-style-tip {
+  margin-left: 3%;
+  width: 93%;
+  height: 51px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.form-style-review {
+  margin-top: 15px;
+  margin-left: 3%;
+  width: 93%;
+  height: 100px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.form-style-star {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 3%;
+  width: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.btn {
+  color: #8E98A1;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.tips {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.btn:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
+
+
+// .container-form {
+//   background-image: url("small_bg.svg");
+//   background-size: cover;
+// }
+
+.pay1 {
+  background-image: asset-url("visa.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.pay2 {
+  background-image: asset-url("mastercard.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.pay3 {
+  background-image: asset-url("apple.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.pay4 {
+  background-image: asset-url("google.jpg");
+  background-size: cover;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.payment_cards {
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 93%;
+  height: 60px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5D666D 22.24%, #242B31 85.59%);
+}
+
+.avatar-large {
+  height: 200px;
+  width: 175px;
+  object-fit: cover;
+}

@@ -1,10 +1,13 @@
 class TeamMembersController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_restaurant, only: %i[index show]
+
   def index
     @team_members = policy_scope(TeamMember)
 
-    @team_members = @team_members.order(first_name: :asc)
+    @team_members = @restaurant.team_members.order(first_name: :asc)
 
-    @team_members = @team_members.where("first_name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+    @team_members = @restaurant.team_members.where("first_name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
 
     respond_to do |format|
       format.html
@@ -42,11 +45,19 @@ class TeamMembersController < ApplicationController
   def destroy
     auhorize @team_members
     @team_members.destroy
+    @team_member = TeamMember.find(params[:id])
+    authorize @team_member
+    @table = Table.new
   end
 
   private
 
+
   def set_team_members
     @team_members = TeamMember.find(params[:id])
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+
   end
 end
