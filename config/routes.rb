@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :tables, only: :create
   end
 
+  get 'users/profile', to: 'users#profile'
   resources :team_members, only: :index
 
-  get 'users/profile', to: 'users#profile'
 end
