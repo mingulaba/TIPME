@@ -1,6 +1,25 @@
 <div>
   <div>
     <h2>Tips from today</h2>
-    <h2><%=  %></h2>
+    <h4>$ 123.08</h4>
   </div>
+  <div>
+    <p>+34%</p>
+  </div>
+</div>
+<div>
+  <div>
+  <%= image_tag('star-full.svg', height: '100px', width: '100px') %>
+    <h3>4.8</h3>
+  </div>
+  <div>
+    <p>Average rating of your Team Members</p>
+  </div>
+</div>
+<div>
+  <h3>Team Members</h3>
+  <% @team_members.each do |team_member| %>
+    <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+    <p><%= team_member.first_name %> <%= team_member.last_name %></p>
+  <% end %>
 </div>

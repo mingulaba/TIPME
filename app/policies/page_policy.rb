@@ -6,7 +6,7 @@ class PagePolicy < ApplicationPolicy
     end
   end
 
-  def dashboard
-    user if user.admin?
+  def dashboard?
+    user
   end
 end

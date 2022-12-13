@@ -1,0 +1,9 @@
+<div class="card-1">
+  <% @team_members.each do |team_member| %>
+    <div class='d-flex'>
+      <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+      <p><%= team_member.first_name %> <%= team_member.last_name %></p>
+      <%= link_to "Delete", team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
+</div>

@@ -1,3 +1,16 @@
-<%= simple_form_for @user do |f| %>
-  <%= f.input :restaurants, collection: @restaurants, prompt: 'Select Restaurant', label: false %>
-<% end %>
+<%#= simple_form_for @user do |f| %>
+  <%#= f.input :restaurants, value: params[:query], collection: @restaurants, prompt: 'Select Restaurant', label: false %>
+<%# end %>
+
+<div class="card-1">
+  <%= simple_form_for @user, html: {data: {restaurant_data_target: "form"}} do |f| %>
+      <%= f.input :restaurant,
+                  collection: @restaurants,
+                  class: "form-control form-style",
+                  label: false,
+                  include_blank: "Select your restaurant",
+                  selected: false,
+                  value: params[:query],
+                  input_html: {data: {restaurant_data_target: "input", action: "change->restaurant-data#handleChange"} } %>
+  <% end %>
+</div>

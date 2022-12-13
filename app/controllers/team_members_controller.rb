@@ -1,5 +1,6 @@
 class TeamMembersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_team_member, only: %i[show destroy]
   before_action :set_restaurant, only: %i[index show]
 
   def index
@@ -16,12 +17,20 @@ class TeamMembersController < ApplicationController
   end
 
   def show
-    @team_member = TeamMember.find(params[:id])
-    authorize @team_member
     @table = Table.new
   end
 
+  def destroy
+    @team_member.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
+
+  def set_team_member
+    @team_member = TeamMember.find(params[:id])
+    authorize @team_member
+  end
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
