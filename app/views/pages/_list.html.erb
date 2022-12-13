@@ -1,13 +1,12 @@
-<div class="card-1">
-  <% @team_members.each do |team_member| %>
-    <div class='d-flex'>
-      <% if team_member.photo.key %>
-        <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
-      <% else %>
-        <%= image_tag('Avatar.png', class: 'avatar') %>
-      <% end %>
-      <p><%= team_member.first_name %> <%= team_member.last_name %></p>
-      <%= link_to "Delete", team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-    </div>
-  <% end %>
-</div>
+<%= link_to 'Add Team Member', new_restaurant_team_member_path(@restaurant), class: "btn1" %>
+<% @team_members.each do |team_member| %>
+  <div class='d-flex'>
+    <% if team_member.photo.key %>
+      <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+    <% else %>
+      <%= image_tag('Avatar.png', class: 'avatar') %>
+    <% end %>
+    <p><%= team_member.first_name %> <%= team_member.last_name %></p>
+    <%= link_to "Delete", team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+<% end %>

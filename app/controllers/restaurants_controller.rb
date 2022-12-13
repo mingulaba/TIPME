@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
     @restaurant.user = current_user
     authorize @restaurant
     if @restaurant.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,6 +25,6 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name)
+    params.require(:restaurant).permit(:name, :address, :category, :phone_number)
   end
 end

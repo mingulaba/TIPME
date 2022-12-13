@@ -11,11 +11,11 @@ export default class extends Controller {
   }
 
   handleChange(event) {
-    const url = `restaurants/${this.inputTarget.value}/team_members`
+    const url = `dashboard?query=${this.inputTarget.value}`
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
-        this.listTarget.outerHTML = data
+        this.listTarget.innerHTML = data
     })
   }
 }

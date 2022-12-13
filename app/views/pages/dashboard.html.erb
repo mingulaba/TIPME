@@ -3,8 +3,11 @@
   <h1>Hello,</h1>
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 </div>
-<div>
-  <%#= render "form" %>
+<div data-controller="restaurant-data">
+  <div>
+    <%= render "form" %>
+    <%= link_to '+', new_restaurant_path, class: "btn1" %>
+  </div>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="false">Dashboard</button>
@@ -12,16 +15,17 @@
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-list" aria-selected="false">Team Members</button>
     </li>
-    <li>
-      <%= link_to '+', new_restaurant_team_member_path(@restaurant), class: "btn1" %>
-    </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
-      <%= render "figures" %>
+      <div data-restaurant-data-target="figures">
+        <%= render "figures" %>
+      </div>
     </div>
     <div class="tab-pane fade show active" id="pills-list" role="tabpanel" aria-labelledby="pills-list-tab">
-      <%= render "list" %>
+      <div class="card-1" data-restaurant-data-target="list">
+        <%= render "pages/list" %>
+      </div>
     </div>
   </div>
 </div>
