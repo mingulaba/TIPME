@@ -36,10 +36,11 @@
 }
 
 .avatar1 {
-  width: 175px;
-  height: 175px;
+  width: 200px;
+  height: 200px;
   margin-top: 30px;
-  border-radius: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .lines2 {
