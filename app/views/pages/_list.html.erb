@@ -1,5 +1,17 @@
-<div class="card-1">
+<div class="card-2">
   <% @team_members.each do |team_member| %>
+
+    <div class='d-flex justify-content-between align-items-center' style="margin: 0.8em;">
+      <div class="image1 p-2">
+      <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+      </div>
+      <div class="name1 mr-auto p-2">
+      <span><%= team_member.first_name %> <%= team_member.last_name %></span>
+      </div>
+      <div class="delete1 p-2" style="margin-right: 10px;">
+      <i class="fa fa-trash fa-1x"> <%= link_to "", team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </i>
+      </div>
+
     <div class='d-flex'>
       <% if team_member.photo.key %>
         <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
@@ -8,6 +20,7 @@
       <% end %>
       <p><%= team_member.first_name %> <%= team_member.last_name %></p>
       <%= link_to "Delete", team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
     </div>
   <% end %>
 </div>
