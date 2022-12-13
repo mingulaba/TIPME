@@ -1,21 +1,36 @@
-<div>
-  <div>
-    <h2>Tips from today</h2>
-    <h4>$ 123.08</h4>
+<div class="card-2 d-flex justify-content-between align-items-center" style="margin-top: 0.8em!important;">
+  <div style="margin: 0.8em;">
+    <h3>Tips from the team : today</h3>
+    <h2 style="text-align: center;">$ 123.08</h2>
   </div>
-  <div>
-    <p>+34%</p>
-  </div>
-</div>
-<div>
-  <div>
-  <%= image_tag('star-full.svg', height: '100px', width: '100px') %>
-    <h3>4.8</h3>
-  </div>
-  <div>
-    <p>Average rating of your Team Members</p>
+  <div style="margin: 0.8em;">
+    <%= image_tag('FAKE.png', height: '65px', width: '70px')  %>
   </div>
 </div>
+
+<div class="card-2 d-flex justify-content-center align-items-center">
+  <div style="margin: 0.8em; margin-top: 1.7em!important;">
+  <%= image_tag('star-full.svg', height: '80px', width: '80px') %>
+    <h2 style="text-align: center;">4.8</h2>
+  </div>
+  <div class="ml-1">
+    <h4 style="text-align: center;">Average rating<br>of your Team<br>Members</h4>
+  </div>
+</div>
+
+<div class="card-2">
+  <h3 style="margin: 0.8em;">Team Members</h3>
+  <div>
+    <% @team_members.each do |team_member| %>
+      <div class='d-flex justify-content-between align-items-center' style="margin: 0.8em;">
+        <div class="image1 p-2">
+          <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+        </div>
+        <div class="name1 mr-auto p-2">
+          <span><%= team_member.first_name %> <%= team_member.last_name %></span>
+        </div>
+  </div>
+
 <div>
   <h3>Team Members</h3>
   <% @team_members.each do |team_member| %>
@@ -26,4 +41,5 @@
   <% end %>
     <p><%= team_member.first_name %> <%= team_member.last_name %></p>
   <% end %>
+</div>
 </div>
