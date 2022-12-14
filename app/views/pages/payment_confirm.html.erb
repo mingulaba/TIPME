@@ -1,32 +1,34 @@
-<div class="first-div">
-    <div class="d-flex justify-content-center">
-      <% if @team_member.photo.key %>
-        <%= cl_image_tag(@team_member.photo.key, class: 'avatar1') %>
-      <% else %>
-        <%= image_tag('Avatar.png', class: 'avatar1') %>
-      <% end %>
-    </div>
-    <div class="d-flex justify-content-center" style="margin: 15px">
-      <%= image_tag('twolines.png', alt: 'two lines', class:'lines2')%>
-    </div>
-    <div class="d-flex justify-content-center" style="padding-bottom: 50px">
-      <p class="text3"><%= @team_member.first_name %> <%= @team_member.last_name %></p>
-    </div>
-</div>
-<div class="card-1" style="padding: 10px">
-  <div class="second-card">
-    <div class="row d-flex justify-content-center">
-      <div class="text1">
-      <p class="text1">Your payment was<br>successfully<br>processed</p>
+<div class="payment-container">
+  <div class="first-div">
+      <div class="d-flex justify-content-center">
+        <% if @team_member.photo.key %>
+          <%= cl_image_tag(@team_member.photo.key, class: 'avatar1') %>
+        <% else %>
+          <%= image_tag('Avatar.png', class: 'avatar1') %>
+        <% end %>
       </div>
-      <div class="text2">
-        <h2 class="text2"><strong>Thanks you for using<br>TIP.<span style="color: #E87121">ME</span></strong></h2>
+      <div class="d-flex justify-content-center" style="margin: 15px">
+        <%= image_tag('twolines.png', alt: 'two lines', class:'lines2')%>
+      </div>
+      <div class="d-flex justify-content-center" style="padding-bottom: 50px">
+        <p class="text3"><%= @team_member.first_name %> <%= @team_member.last_name %></p>
+      </div>
+  </div>
+  <div class="card-1" style="padding: 10px">
+    <div class="second-card">
+      <div class="row d-flex justify-content-center">
+        <div class="text1">
+          <p class="text1">Your payment was successfully processed</p>
+        </div>
+        <div class="text2">
+          <h2 class="text2"><strong>Thanks you for using<br>TIP.<span style="color: #E87121">ME</span></strong></h2>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="d-flex justify-content-center" style="margin-top: 50px">
-  <%= image_tag('logo.svg', alt: 'Tip-Me logo', class: 'logo1')%>
+  <div class="d-flex justify-content-center" style="margin-top: 20px;">
+    <%= image_tag('logo.svg', alt: 'Tip-Me logo', class: 'logo1')%>
+  </div>
 </div>
