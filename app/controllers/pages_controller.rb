@@ -2,9 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home payment_confirm]
 
   def home
+    @user = current_user
   end
 
   def payment_confirm
+    @user = current_user
     @team_member = TeamMember.find(params[:team_member_id])
   end
 
