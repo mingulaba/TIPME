@@ -1,36 +1,26 @@
 <div>
-    <div>
-      <%= image_tag('logo.svg', alt: 'Tip-Me logo', class: 'logo')%>
-    </div>
+  <div>
+    <%= image_tag('logo.svg', alt: 'Tip-Me logo', class: 'logo')%>
+  </div>
 </div>
 
-  <div style="margin-top: -100px">
-    <div class="d-flex justify-content-center">
-      <h2>Scan QR code</h2>
-    </div>
-    <div class="d-flex justify-content-center" style="margin-bottom: -15px">
-      <p>Place qr code inside the frame to scan please</p>
-    </div>
-    <div class="d-flex justify-content-center" style="margin-bottom: 30px">
-      <p>avoid shake to get results quickly</p>
-    </div>
+<div style="margin-top: -100px">
+  <div class="d-flex justify-content-center">
+    <h2>Scan the QR code</h2>
   </div>
+</div>
 
-  <div class="card-1" style="margin-top: 20px">
-    <div class="d-flex justify-content-center">
-      <%= image_tag('qr-code.png', alt: 'Tip-Me logo', class: 'qr-code')%>
-    </div>
-    <div class="d-flex justify-content-center">
-      <h3>Scanning Code ...</h3>
-    </div>
-    <div class="d-flex justify-content-center">
-      <%= image_tag('small-icons.png', alt: 'small icons', class: 'qr-code')%>
-    </div>
-    <div class="d-flex justify-content-center" style="line-height: 58px">
-      <%= link_to "Place Camera Code", restaurant_team_members_path(Restaurant.first), label: false, class: "btn2" %>
-    </div>
+<div class="card-1 QR-card" style="margin-top: 20px">
+  <div class="d-flex justify-content-center">
+    <%= image_tag('qr-code.png', alt: 'Tip-Me logo', class: 'qr-code')%>
   </div>
-
-<!-- LOGOUT BUTTON - TO DELETE FOR PRESENTATION -->
-<%= button_to "Log out", destroy_user_session_path, method: :delete %>
-<!-- LOGOUT BUTTON - TO DELETE FOR PRESENTATION -->
+  <div class="d-flex justify-content-center">
+    <h3>Scanning Code ...</h3>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= image_tag('small-icons.png', alt: 'small icons', class: 'icons')%>
+  </div>
+  <div class="d-flex justify-content-center" style="line-height: 58px">
+    <%= link_to "Confirm", restaurant_team_members_path(Restaurant.first), label: false, class: "btn2" %>
+  </div>
+</div>

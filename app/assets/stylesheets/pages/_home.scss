@@ -1,4 +1,12 @@
 // Specific CSS for your home-page
+body {
+  min-height: 100vh;
+}
+
+.QR-card {
+  min-height: 63vh;
+}
+
 h2 {
   color: #8E98A1 !important;
   font-size: 40px;
@@ -15,9 +23,14 @@ h3 {
 }
 
 .qr-code {
-  margin-top: 40px;
+  margin-top: 50px;
   transition: transform .7s ease-in-out;
 }
+
+.icons {
+  margin-top: 60px;
+}
+
 .qr-code:hover {
   transform: rotate(360deg);
 }
@@ -28,4 +41,9 @@ h3 {
 
 .fist-card {
   margin-top: 30px;
+}
+
+a {
+  font-size: 1.3rem!important;
+  font-weight: bold!important;
 }

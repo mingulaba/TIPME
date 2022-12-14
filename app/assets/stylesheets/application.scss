@@ -23,7 +23,6 @@
   backdrop-filter: blur(3px);
 }
 
-
 button {
   width: 123px;
   height: 42px;
@@ -44,6 +43,12 @@ button {
   border: 1px solid;
   border-image-source: linear-gradient(135.83deg, #5d666d17 22.24%, #242b311f 85.59%);
   color: white;
+}
+
+.form-control {
+  color: white!important;
+  text-align: center!important;
+  padding: 16px!important;
 }
 
 .form-style1 {
@@ -86,6 +91,12 @@ button {
   text-align: center;
   font-size: 16px;
   font-style: bold;
+}
+
+a {
+  color: white!important;
+  text-decoration: none!important;
+  font-size: 0.85!important;
 }
 
 h1, h2, h6 {
