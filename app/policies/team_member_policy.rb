@@ -32,4 +32,8 @@ class TeamMemberPolicy < ApplicationPolicy
   def dashboard?
     user
   end
+
+  def profile?
+    true
+  end
 end

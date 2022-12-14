@@ -1,0 +1,42 @@
+
+.card-2 {
+  margin-top: 2em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(3px);
+}
+
+h3 {
+  text-align: center !important;
+  font-size: 22px !important;
+}
+
+h5 {
+  text-align: center !important;
+  font-size: 18px !important;
+  color: #E87121;
+}
+
+.first-title {
+  margin-left: 0.8em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+p{
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 5px;
+  margin: 0 auto;
+}
+
+.date{
+  align-items: start ;
+}
+
+
+li {
+  display: flex;
+  align-items: flex-start;
+}

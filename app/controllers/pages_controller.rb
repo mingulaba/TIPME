@@ -33,4 +33,5 @@ class PagesController < ApplicationController
   def profile
     @team_member = current_user.team_member
   end
+
 end
