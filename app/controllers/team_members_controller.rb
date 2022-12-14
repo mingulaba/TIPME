@@ -53,6 +53,7 @@ class TeamMembersController < ApplicationController
 
   def profile
     @user = current_user
+    @tables = @team_member.tables.order(date: :desc)
   end
 
   private
