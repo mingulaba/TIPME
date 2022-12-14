@@ -2,7 +2,7 @@
   <%= form_with url: restaurant_team_members_path, method: :get, html: {data: {search_team_members_target: "form"}} do |f| %>
       <%= f.text_field :query,
                       class: "form-control form-style",
-                      placeholder: "Type the name of a team member",
+                      placeholder: "Who made you smile?",
                       value: params[:query],
                       data: {
                         search_team_members_target: "input",
