@@ -3,15 +3,15 @@
     <%= link_to 'Add Team Member', new_restaurant_team_member_path(@restaurant) %>
   </div>
   <% @team_members.each do |team_member| %>
-    <%= link_to profile_team_member_path(team_member) do %>
-      <div class='d-flex justify-content-between align-items-center' style="margin: 0.8em;">
-        <div class="image1 p-2">
+      <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0 0.8em; ">
+        <div class="image1">
+          <%= link_to profile_team_member_path(team_member) do %>
           <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
         </div>
-        <div class="name1 mr-auto p-2">
+        <div class="name1">
           <span><%= team_member.first_name %> <%= team_member.last_name %></span>
         </div>
-        <div class="delete1 p-2" style="margin-right: 10px;">
+        <div class="delete1" style="margin-right: 10px;">
           <%= link_to team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <i class="fa fa-trash fa-1x"></i>
           <% end %>
