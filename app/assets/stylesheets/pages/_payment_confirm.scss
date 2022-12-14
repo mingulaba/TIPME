@@ -1,6 +1,6 @@
 
 .second-card {
-  height: 280px;
+  height: 200px;
   margin: 10px;
   background: linear-gradient(134.17deg, rgba(63, 72, 80, 0.6) 4.98%, rgba(54, 62, 70, 0.6) 94.88%);
   box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7);
@@ -14,7 +14,7 @@
   line-height: 45px;
   align-items: center;
   text-align: center;
-  margin-top: 6px;
+  margin-top: 5px;
   font-family: 'Marcellus', serif;
 
 }
@@ -26,7 +26,7 @@
   margin-bottom: 40px;
   font-size: 26px;
   position: relative;
-  top: 28px;
+  top: 14px;
   font-family: 'Marcellus', serif;
 
 }
@@ -35,13 +35,16 @@
   font-weight: 500;
   font-size: 28px!important;
   line-height: 51px;
-  color: #8E98A2
+  color: #8E98A2;
+  font-family: 'Marcellus', serif;
+
 }
 
 .logo1 {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 108px;
   object-fit: cover;
+  margin-top: 110px !important;
 
 }
 
@@ -60,5 +63,5 @@
 
 .payment-container {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
