@@ -8,10 +8,20 @@
   </div>
 </div>
 
+<div class="card-2">
+  <h3>Number of tips</h3>
+  <%= @table_counter %>
+</div>
+
+<div class="card-2">
+  <h3>Top rating</h3>
+  <%= @top_rating.first_name %>
+</div>
+
 <div class="card-2 d-flex justify-content-center align-items-center">
   <div style="margin: 0.8em; margin-top: 1.7em!important;">
-  <%= image_tag('star-full.svg', height: '80px', width: '80px') %>
-    <h2 style="text-align: center;">4.8</h2>
+    <%= image_tag('star-full.svg', height: '80px', width: '80px') %>
+    <h2 style="text-align: center;"><%= @average_rating %></h2>
   </div>
   <div class="ml-1">
     <h4 style="text-align: center; margin-left: 50px;">Team average<br>rating</h4>
@@ -19,21 +29,6 @@
 </div>
 
 <div class="card-2">
-  <h3 style="margin: 0.8em;">Team Members</h3>
-  <div>
-    <% @team_members.each do |team_member| %>
-      <div class='d-flex justify-content-between align-items-center' style="margin: 0.8em;">
-        <div class="image1 p-2">
-          <% if team_member.photo.key %>
-            <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
-          <% else %>
-            <%= image_tag('Avatar.png', class: 'avatar') %>
-          <% end %>
-        </div>
-        <div class="name1 mr-auto p-2">
-          <span><%= team_member.first_name %> <%= team_member.last_name %></span>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <h3>Low rating</h3>
+  <%= @low_rating.first_name %>
 </div>
