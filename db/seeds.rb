@@ -5,13 +5,18 @@
 require 'faker'
 require 'date'
 require 'open-uri'
+
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 puts "Deleting database"
+
 TeamMember.destroy_all
 Restaurant.destroy_all
 User.destroy_all
+
 puts "Creating users"
+
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670423828/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg")
 user_1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com", admin: true)
 user_1.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670423828/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg", content_type: "image/jpg")
@@ -78,13 +83,17 @@ user_13.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/i
 user_13.save
 
 puts "Creating Restaurant"
-restaurant = Restaurant.new(name: "The Delicatessen", user_id: User.first.id)
-restaurant.save!
+
+restaurant1 = Restaurant.new(name: "The Delicatessen", user_id: User.first.id)
+restaurant1.save
+
+restaurant2 = Restaurant.new(name: "Tandem Café", user_id: User.first.id)
+restaurant2.save
 
 puts "Creating team members"
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670837225/Keshe_lookalike_mtbpr3.jpg")
-team_member_1 = TeamMember.new(first_name: "Phillip", last_name: "Johnson", birth_date: Date.new(2001, 4, 23), restaurant_id: 1, user_id: 2, introduction: "I would like to save up for fun")
+team_member_1 = TeamMember.new(first_name: "Phillip", last_name: "Johnson", birth_date: Date.new(2001, 4, 23), restaurant_id: 2, user_id: 2, introduction: "I would like to save up for fun")
 team_member_1.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/v1670425548/image_wdbzlq-Circle_kilndc.jpg", content_type: "image/jpg")
 team_member_1.save
 
@@ -104,7 +113,7 @@ team_member4.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvq
 team_member4.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670843208/Stevey_ejyg28.jpg")
-team_member_5 = TeamMember.new(first_name: "Stevey", last_name: "Baldwin", birth_date: Date.new(1997, 1, 29), restaurant_id: 1, user_id: 6, introduction: "I would like to save up for Antarktica expedition")
+team_member_5 = TeamMember.new(first_name: "Stevey", last_name: "Baldwin", birth_date: Date.new(1997, 1, 29), restaurant_id: 2, user_id: 6, introduction: "I would like to save up for Antarktica expedition")
 team_member_5.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424369/handsome-male-cafe-worker-serving-customer-cheerful-young-waiter-holding-tray-cups-tea-standing-smiling-63677441_nkwcmw.jpg", content_type: "image/jpg")
 team_member_5.save
 
@@ -134,7 +143,7 @@ team_member_10.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsn
 team_member_10.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670844473/Ulf_afazxl.jpg")
-team_member_11 = TeamMember.new(first_name: "Ulf", last_name: "Weiner", birth_date: Date.new(1985, 8, 17), restaurant_id: 1, user_id: 12, introduction: "I would like to save up for a new mountain bike")
+team_member_11 = TeamMember.new(first_name: "Ulf", last_name: "Weiner", birth_date: Date.new(1985, 8, 17), restaurant_id: 2, user_id: 12, introduction: "I would like to save up for a new mountain bike")
 team_member_11.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670430441/portrait-smiling-male-server-working-night-shift-bar-restaurant-club_625516-2111_lpx9oi.jpg", content_type: "image/jpg")
 team_member_11.save
 
@@ -143,88 +152,26 @@ team_member_12 = TeamMember.new(first_name: "Galvin", last_name: "Totbringer", b
 team_member_12.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424194/Good-Server-Tips-and-Tricks_imqoke.jpg", content_type: "image/jpg")
 team_member_12.save
 
-puts "team members"
+puts "Creating tables"
 
+100.times do
+  price = rand(25..250)
+  tip = (price * 10) / 100
+  review = Faker::Restaurant.review
+  rating = rand(1..5)
+  restaurant = Restaurant.first
+  team_member = restaurant.team_members.sample
+  table = Table.new(price: price, tip: tip, review: review, rating: rating, team_member_id: team_member.id)
+  table.save
+end
 
-
-
-
-
-# user_3 =  first_name: "" last_name: password: email: admin: true
-
-# user_4 = first_name: last_name: password: email: admin: true
-
-# user_5 = first_name: last_name: password: email: admin: true
-
-# admin = User.new(first_name: "Jerry",
-#                  last_name: "Whuzaraccardrvr",
-#                  password: "123456",
-#                  email: "admin@tipme.com") # admin: true)
-# admin.save
-
-# 5.times do
-#   user = User.new(first_name: Faker::Name.first_name,
-#                   last_name: Faker::Name.last_name,
-#                   password: "123456",
-#                   email: Faker::Name.first_name)
-#   user.save
-# end
-
-# # restaurant = Restaurant.new(name: "", user: admin)
-# # restaurant.save
-
-
-
-# TeamMember.new([{
-#     user: User.first,
-#     first_name: User.first.first_name,
-#     last_name: User.first.last_name,
-#     birth_date: Faker::Date.birthday(min_age: 18, max_age: 45),
-#     restaurant: 1
-
-#     },
-#     {
-#     user: User.second,
-#     first_name: User.second.first_name,
-#     last_name: User.second.last_name,
-#     birth_date: Faker::Date.birthday(min_age: 18, max_age: 45),
-#     restaurant: 1
-#     },
-#     {
-#     user: User.third,
-#     first_name: User.third.first_name,
-#     last_name: User.third.last_name,
-#     birth_date: Faker::Date.birthday(min_age: 18, max_age: 45),
-#     restaurant: 1
-#     },
-#     {
-#     user: User.fourth,
-#     first_name: User.fourth.first_name,
-#     last_name: User.fourth.last_name,
-#     birth_date: Faker::Date.birthday(min_age: 18, max_age: 45),
-#     restaurant: 1
-#     },
-#     {
-#     user: User.fifth,
-#     first_name: User.fifth.first_name,
-#     last_name: User.fifth.first_name,
-#     birth_date: Faker::Date.birthday(min_age: 18, max_age: 45),
-#     restaurant: 1
-
-#     }])
-
-# 15.times do
-#   team_member = TeamMember.new(
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     birth_date: Faker::Date.birthday(min_age: 18, max_age: 45))
-# end
-# # 20.times do
-# #   team_member = TeamMember.new(first_name: Faker::Name.first_name,
-# #                                last_name: Faker::Name.last_name,
-# #                                birth_date: Faker::Date.birthday(min_age: 18, max_age: 45),
-# #                                restaurant: restaurant,
-# #                                user: User.all.sample)
-
-# #   team_member.save
-# # end
+25.times do
+  price = rand(25..150)
+  tip = (price * 10) / 100
+  review = Faker::Restaurant.review
+  rating = rand(1..5)
+  restaurant = Restaurant.second
+  team_member = restaurant.team_members.sample
+  table = Table.new(price: price, tip: tip, review: review, rating: rating, team_member_id: team_member.id)
+  table.save
+end

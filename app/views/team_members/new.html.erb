@@ -23,8 +23,8 @@
               <div>
                 <%#= f.input :birth_date, label: false, input_html: { class: "form-style", placeholder: "Date of birth ..." } %>
                 <%= f.input :birth_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+                <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
               </div>
-            </div>
             <div class="form-actions" style="margin-bottom: -20px">
               <%= f.button :submit,"Create", class: "btn1" %>
             </div>
