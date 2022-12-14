@@ -26,12 +26,11 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.text { render partial: "pages/list", locals: { team_members: @team_members }, formats: [:html] }
+      format.text { render partial: "pages/tabs", locals: { team_members: @team_members }, formats: [:html] }
     end
   end
 
   def profile
     @team_member = current_user.team_member
   end
-
 end

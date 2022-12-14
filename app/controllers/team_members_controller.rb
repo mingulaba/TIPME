@@ -17,7 +17,6 @@ class TeamMembersController < ApplicationController
     end
   end
 
-
   def show
     @user = current_user
     @table = Table.new

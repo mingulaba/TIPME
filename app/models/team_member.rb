@@ -6,8 +6,6 @@ class TeamMember < ApplicationRecord
   validates :first_name, :last_name, :birth_date, presence: true
   has_one_attached :photo
 
-  has_many :tables
-
   def av_rating
     sum = 0
     self.tables.each do |table|
