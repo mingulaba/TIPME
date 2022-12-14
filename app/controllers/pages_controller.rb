@@ -18,10 +18,18 @@ class PagesController < ApplicationController
     authorize @restaurant
     @team_members = @restaurant.team_members.order(first_name: :asc)
     authorize @team_members
+    top_rating
+    average_rating(@team_members)
+    low_rating
+    table_counter
 
     if params[:query]
       @restaurant = Restaurant.find(params[:query])
       @team_members = @restaurant.team_members
+      top_rating
+      average_rating(@team_members)
+      low_rating
+      table_counter
     end
 
     respond_to do |format|
@@ -32,5 +40,36 @@ class PagesController < ApplicationController
 
   def profile
     @team_member = current_user.team_member
+  end
+
+  private
+
+  def top_rating
+    @top_rating = @team_members.max_by(&:av_rating)
+  end
+
+  def average_rating(team_members)
+    sum = 0
+    tables = 0
+    @user = current_user
+    team_members.each do |team_member|
+      team_member.tables.each do |table|
+        sum += table.rating
+        tables += 1
+      end
+    end
+    @average_rating = (sum / tables.to_f).round(1)
+  end
+
+  def low_rating
+    @low_rating = @team_members.min_by(&:av_rating)
+  end
+
+  def table_counter
+    @table_counter = 0
+    @team_members.each do |team_member|
+      team_member.tables.each { |table| @table_counter += 1 if table.date == Date.today }
+    end
+    @table_counter
   end
 end
