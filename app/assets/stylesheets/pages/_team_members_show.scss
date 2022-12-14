@@ -156,3 +156,20 @@ button {
   width: 175px;
   object-fit: cover;
 }
+
+h4 {
+  font-size: 20px;
+  font-family: 'Marcellus', serif;
+  text-align: center;
+  color: bisque;
+}
+
+.amount > div > label {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.amount > div > label > abbr {
+  display: none;
+}

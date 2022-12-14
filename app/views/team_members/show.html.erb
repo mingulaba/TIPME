@@ -13,26 +13,26 @@
     <%= image_tag('twolines.png', alt: 'two lines', class:'')%>
   </div>
   <div class="d-flex justify-content-center">
-    <div><h2><%= @team_member.first_name %></h2></div> 
+    <div><h2><%= @team_member.first_name %></h2></div>
   </div>
   <div class="d-flex justify-content-center">
-    <div><h3><%= @team_member.introduction %></h3></div>
+    <div style="font-size: 10px;"> <h4><%= @team_member.introduction %></h4></div>
   </div>
 </div>
 <div class="card-1 card-body py-5 px-md-5">
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center" data-controller="tip">
     <%= simple_form_for [@team_member, @table], html: {data: {form_target: "form"}, remote: true} do |f| %>
-        <div style="margin-top: -35px">
-        <%= f.input :tip, label: false, input_html: { class: "form-style-tip", placeholder: "Your tip" } %>
+        <div style="margin-top: -35px; margin-bottom:15px;" class="amount">
+        <%= f.input :tip, label: "Amount on the bill: 200 €", input_html: { class: "form-style-tip", placeholder: "Your tip...", data: {tip_target: "input"} } %>
         </div>
-        <div class="tips">
-          <%= link_to "5%", "#", class: "btn" %>
-          <%= link_to "10%", "#", class: "btn" %>
-          <%= link_to "15%", "#", class: "btn btn-gradient" %>
+        <div class="tips" >
+          <%= link_to "5%", "#", class: "btn",  data: {tip_target: "five", action: "click->tip#times_five"} %>
+          <%= link_to "10%", "#", class: "btn", data: {tip_target: "ten", action: "click->tip#times_ten"} %>
+          <%= link_to "15%", "#", class: "btn btn-gradient", data: {tip_target: "fifteen", action: "click->tip#times_fifteen"} %>
         </div>
         <%= f.input :review, label: false, input_html: { class: "form-style-review", placeholder: "Add your feedback"}%>
         <div class="form-style-star">
-          <div style="margin-top: 20px">
+          <div>
             <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating"}}%>
           </div>
         </div>
