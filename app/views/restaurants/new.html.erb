@@ -7,39 +7,37 @@
       <!-- Background image -->
 
       <!-- Background image -->
-      <div class="first-div">
+      <div class="first-div" style="margin-bottom: 3em;">
         <h2>Let's create a<br>New Restaurant 🍺</h2>
       </div>
         <div class="second-div">
-          <div class="card-1 card-body py-5 px-md-5"> <!-- HERE -->
+          <div class="card-4 card-body px-md-5"> <!-- HERE -->
 
             <div class="row d-flex justify-content-center">
               <div class="col-lg-8">
-                <h2 class="fw-bold mb-5">New Restaurant</h2>
-
-                <form class="">
+                <form style="margin-top: 20px">
                   <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div>
-                      <%= f.input :name, label: false, input_html: { class: "form-style", placeholder: "Name ..." } %>
+                      <%= f.input :name, label: false, input_html: { class: "form-style4", placeholder: "Name" } %>
                   </div>
                   <div>
-                      <%= f.input :address, label: false, input_html: { class: "form-style", placeholder: "Adress ..." } %>
+                      <%= f.input :address, label: false, input_html: { class: "form-style4", placeholder: "Address" } %>
                   </div>
                   <div>
-                      <%= f.input :category, label: false, input_html: { class: "form-style", placeholder: "Category ..." } %>
+                      <%= f.input :category, label: false, input_html: { class: "form-style4", placeholder: "Category" } %>
                   </div>
                   <div>
-                      <%= f.input :phone_number, label: false, input_html: { class: "form-style", placeholder: "Phone number ..." } %>
+                      <%= f.input :phone_number, label: false, input_html: { class: "form-style4", placeholder: "Phone number" } %>
                   </div>
                 </form>
               </div>
             </div>
+            <div class="form-actions" style="margin-top: 20px; margin-bottom: 20px;">
+              <%= f.button :submit,"Create", class: "btn1" %>
+            </div>
+
           </div>
         </div>
-      <div class="form-actions">
-        <%= f.button :submit,"Create", class: "btn1" %>
-      </div>
-
     </section>
     <!-- Section: Design Block -->
   </div>

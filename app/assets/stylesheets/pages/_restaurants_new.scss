@@ -20,3 +20,23 @@ body {
 h2 {
   color: white;
 }
+
+.form-style4 {
+  margin-top: 0.9em;
+  margin-left: 3%;
+  width: 93%;
+  height: 51px;
+  background: linear-gradient(134.17deg, #3F4850 4.98%, #363E46 94.88%);
+  box-shadow: -5px -5px 20px rgba(72, 83, 92, 0.35), 13px 14px 12px -6px rgba(35, 40, 45, 0.7), 4px 4px 8px 0px #00000040 inset;
+  border-radius: 18px;
+  border: 1px solid;
+  border-image-source: linear-gradient(135.83deg, #5d666d17 22.24%, #242b311f 85.59%);
+  color: white;
+}
+
+.card-4 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(3px);
+}
