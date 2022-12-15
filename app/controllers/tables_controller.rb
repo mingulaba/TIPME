@@ -7,6 +7,7 @@ class TablesController < ApplicationController
     @team_member = TeamMember.find(params[:team_member_id])
     authorize @team_member
     @table.team_member = @team_member
+    @table.date = Date.today
     if @table.save
       #when we integrate the payment, we shouls be redirect to the pyment_new_path
       #scebario 2 - redirect to the confirmation page
