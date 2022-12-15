@@ -93,26 +93,31 @@ restaurant2.save
 puts "Creating team members"
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670837225/Keshe_lookalike_mtbpr3.jpg")
+
 team_member1 = TeamMember.new(first_name: "Phillip", last_name: "Johnson", birth_date: Date.new(2001, 4, 23), restaurant_id: 2, user_id: 2, introduction: "I would like to save up for funny adventure 🌋")
 team_member1.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/v1670425548/image_wdbzlq-Circle_kilndc.jpg", content_type: "image/jpg")
 team_member1.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670844627/Sally_vky9lx.jpg")
+
 team_member2 = TeamMember.new(first_name: "Sally", last_name: "Strings", birth_date: Date.new(1995, 7, 15), restaurant_id: 2, user_id: 3, introduction: "I would like to save up for my education as a Designer 🎨")
 team_member2.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424655/twin-peaks-lawsuit_adau3a.jpg", content_type: "image/jpg")
 team_member2.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670839299/Georgerestaurant_eru71e.jpg")
+
 team_member3 = TeamMember.new(first_name: "George", last_name: "Ullagso", birth_date: Date.new(1992, 5, 11), restaurant_id: 1, user_id: 4, introduction: "I would like to save up for a cooking school 🍳")
 team_member3.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424451/shutterstock_110620211-653x339_k4mnoo.jpg", content_type: "image/jpg")
 team_member3.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670845142/Karoline_b5en38.jpg")
+
 team_member4 = TeamMember.new(first_name: "Karoline", last_name: "Riviera", birth_date: Date.new(1989, 8, 22), restaurant_id: 1, user_id: 5, introduction: "I would like to save up to open my own restaurant 🥙 ")
 team_member4.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424655/hooters-server-girl_pxylwg.jpg.jpg", content_type: "image/jpg")
 team_member4.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670843208/Stevey_ejyg28.jpg")
+
 team_member5 = TeamMember.new(first_name: "Stevey", last_name: "Baldwin", birth_date: Date.new(1997, 1, 29), restaurant_id: 2, user_id: 6, introduction: "I would like to save up for Antarktica expedition 🛟")
 team_member5.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424369/handsome-male-cafe-worker-serving-customer-cheerful-young-waiter-holding-tray-cups-tea-standing-smiling-63677441_nkwcmw.jpg", content_type: "image/jpg")
 team_member5.save
@@ -128,11 +133,13 @@ team_member7.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvq
 team_member7.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670424974/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg")
+
 team_member8 = TeamMember.new(first_name: "Tobias", last_name: "Fiellmann", birth_date: Date.new(1998, 10, 31), restaurant_id: 1, user_id: 9, introduction: "I would like to save up to make an unforgettable date 🥰")
 team_member8.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424372/waiter-in-uniform-at-restaurant-pictures_csp6446688_pqf4up.jpg", content_type: "image/jpg")
 team_member8.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670844271/Sarah_e0o7ql.jpg")
+
 team_member9 = TeamMember.new(first_name: "Sarah", last_name: "Donaldson", birth_date: Date.new(1995, 12, 27), restaurant_id: 2, user_id: 10, introduction: "I would like to save up for a Patagonia trip 🏞")
 team_member9.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670424195/5984ae9eb9cd6c1f008b46dc_fnexvq.jpg", content_type: "image/jpg")
 team_member9.save
@@ -144,6 +151,7 @@ team_member10.save
 
 file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1670844473/Ulf_afazxl.jpg")
 team_member11 = TeamMember.new(first_name: "Ulf", last_name: "Weiner", birth_date: Date.new(1985, 8, 17), restaurant_id: 2, user_id: 12, introduction: "I would like to save up for a new mountain bike 🚲")
+
 team_member11.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670430441/portrait-smiling-male-server-working-night-shift-bar-restaurant-club_625516-2111_lpx9oi.jpg", content_type: "image/jpg")
 team_member11.save
 
