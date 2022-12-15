@@ -1,9 +1,7 @@
 <% team_members.each do |team_member| %>
   <%= link_to restaurant_team_member_path(@restaurant, team_member) do %>
     <div class='team_member_card'>
-      <% if team_member.nil? %>
-        <p></p>
-      <% elsif team_member.photo.attached? %>
+      <% if team_member.photo.key %>
         <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
       <% else  %>
         <%= image_tag('Avatar.png', class: 'avatar') %>

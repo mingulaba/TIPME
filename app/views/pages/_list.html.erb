@@ -1,9 +1,10 @@
-<div class="card-2">
+<div class="card-2" style="margin-bottom: 0.8em!important;">
   <div class="btn4">
     <%= link_to 'Add Team Member', new_restaurant_team_member_path(@restaurant) %>
   </div>
+
   <% @team_members.each do |team_member| %>
-    <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0 0.8em; ">
+    <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 1em 0.8em; ">
       <div class="image1">
         <%= link_to profile_team_member_path(team_member) do %>
         <% if team_member.nil? %>
