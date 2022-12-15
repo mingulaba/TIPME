@@ -18,20 +18,10 @@ class PagesController < ApplicationController
     authorize @restaurant
     @team_members = @restaurant.team_members.order(first_name: :asc)
     authorize @team_members
-    tips_today
-    average_tip_today(@team_members)
-    average_rating(@team_members)
-    top_rating
-    low_rating
 
     if params[:query]
       @restaurant = Restaurant.find(params[:query])
       @team_members = @restaurant.team_members
-      tips_today
-      average_tip_today(@team_members)
-      average_rating(@team_members)
-      top_rating
-      low_rating
     end
 
     respond_to do |format|
@@ -44,49 +34,49 @@ class PagesController < ApplicationController
     @team_member = current_user.team_member
   end
 
-  private
+  # private
 
-  def tips_today
-    @tips = 0
-    @team_members.each do |team_member|
-      team_member.tables.each { |table| @tips += table.tip if table.date == Date.today }
-    end
-    @tips
-  end
+  # def tips_today
+  #   @tips = 0
+  #   @team_members.each do |team_member|
+  #     team_member.tables.each { |table| @tips += table.tip if table.date == Date.today }
+  #   end
+  #   @tips
+  # end
 
-  def average_tip_today(team_members)
-    sum = 0
-    tips = 0
-    team_members.each do |team_member|
-      team_member.tables.each do |table|
-        if table.date == Date.today
-          sum += table.tip
-          tips += 1
-        end
-      end
-    end
-    @average_tip_today = (sum / tips.to_f).round(2)
-  end
+  # def average_tip_today(team_members)
+  #   sum = 0
+  #   tips = 0
+  #   team_members.each do |team_member|
+  #     team_member.tables.each do |table|
+  #       if table.date == Date.today
+  #         sum += table.tip
+  #         tips += 1
+  #       end
+  #     end
+  #   end
+  #   @average_tip_today = (sum / tips.to_f).round(2)
+  # end
 
-  def average_rating(team_members)
-    sum = 0
-    tables = 0
-    team_members.each do |team_member|
-      team_member.tables.each do |table|
-        sum += table.rating
-        tables += 1
-      end
-    end
-    @average_rating = (sum / tables.to_f).round(1)
-  end
+  # def average_rating(team_members)
+  #   sum = 0
+  #   tables = 0
+  #   team_members.each do |team_member|
+  #     team_member.tables.each do |table|
+  #       sum += table.rating
+  #       tables += 1
+  #     end
+  #   end
+  #   @average_rating = (sum / tables.to_f).round(1)
+  # end
 
-  def top_rating
-    @top_rating = @team_members.max_by(&:av_rating)
-  end
+  # def top_rating
+  #   @top_rating = @team_members.max_by(&:av_rating)
+  # end
 
-  def low_rating
-    @low_rating = @team_members.min_by(&:av_rating)
-  end
+  # def low_rating
+  #   @low_rating = @team_members.min_by(&:av_rating)
+  # end
 
   # def table_counter
   #   @table_counter = 0
