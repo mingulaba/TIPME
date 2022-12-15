@@ -5,7 +5,7 @@
         <p></p>
       <% elsif team_member.photo.attached? %>
         <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
-      <% elsif  %>
+      <% else  %>
         <%= image_tag('Avatar.png', class: 'avatar') %>
       <% end %>
       <p><%= team_member.first_name %> <%= team_member.last_name %></p>
