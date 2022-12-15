@@ -4,7 +4,7 @@
   </div>
 
   <% @team_members.each do |team_member| %>
-    <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0 0.8em; ">
+    <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 1em 0.8em; ">
       <div class="image1">
         <%= link_to profile_team_member_path(team_member) do %>
         <% if team_member.nil? %>
