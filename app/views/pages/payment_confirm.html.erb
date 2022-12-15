@@ -1,6 +1,6 @@
-<div class="payment-container">
-  <div class="first-div">
-      <div class="d-flex justify-content-center">
+<div class="payment-container" >
+  <div class="first-div" style="margin-top: 50px">
+      <div class="d-flex justify-content-center" >
         <% if @team_member.photo.key %>
           <%= cl_image_tag(@team_member.photo.key, class: 'avatar-large') %>
         <% else %>
@@ -30,4 +30,3 @@
     <%= image_tag('logo2.png', alt: 'Tip-Me logo', class: 'logo1') %>
   </div>
 </div>
-
