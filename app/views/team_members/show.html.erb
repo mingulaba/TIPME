@@ -3,7 +3,9 @@
 <link href="application.scss" rel="stylesheet">
 <div style="margin: 30px">
   <div class="d-flex justify-content-center">
-    <% if @team_member.photo.key %>
+    <% if @team_member.nil? %>
+      <p></p>
+    <% elsif @team_member.photo.attached? %>
       <%= cl_image_tag(@team_member.photo.key, class: "avatar-large")%>
     <% else %>
       <%= image_tag('Avatar.png', class: 'avatar-large') %>
