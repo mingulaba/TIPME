@@ -98,11 +98,10 @@ a {
   font-size: 0.85!important;
 }
 
-h1, h2, h6 {
-  font-family: 'Marcellus', serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Marcellus', serif!important;
 }
 
-h3, p {
-  font-family: 'Poppins', sans-serif;
+p, span, a, button, form {
+  font-family: 'Poppins', sans-serif!important;
 }
-
