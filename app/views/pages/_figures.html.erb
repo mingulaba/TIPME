@@ -1,40 +1,23 @@
 <div class="card-2 d-flex justify-content-between align-items-center" style="margin-top: 0.8em!important;">
   <div style="margin: 0.8em;">
     <h3 style="margin-left: 12px">Today's tips</h3>
-    <% if @tips.nil? %>
-      <h2 style="margin-left: 20px">€ 0.0</h2>
-    <% else %>
-      <h2 style="margin-left: 20px">€ <%= @tips %></h2>
-    <% end %>
+    <h2 style="margin-left: 20px">€ 0.0</h2>
   </div>
   <div style="margin: 0.8em;">
     <%= image_tag('FAKE.png', height: '55px', width: '65px')  %>
   </div>
 </div>
 
-<div class="card-2 d-flex justify-content-between align-items-center" style="margin-top: 0.8em!important;">
-  <div style="margin: 0.8em;">
-    <h3 style="margin-left: 12px">Average Tip</h3>
-    <% if @average_tip_today.nan? %>
-      <h2 style="margin-left: 20px">€ 0.0</h2>
-    <% else %>
-      <h2 style="margin-left: 20px">€ <%= @average_tip_today %></h2>
-    <% end %>
-  </div>
-  <div style="margin: 0.5em;">
-    <%= image_tag('FAKE2.png', height: '55px', width: '70px')  %>
-  </div>
+<div class="card-2">
+  <h3>Average tip</h3>
+  <h2>€ 0.0</h2>
 </div>
 
 
 <div class="card-2 d-flex justify-content-center align-items-center">
   <div style="margin: 0.8em; margin-top: 1.7em!important;">
     <%= image_tag('star-full.svg', height: '80px', width: '80px') %>
-    <% if @average_rating.nan? %>
-      <h2 style="text-align: center;">0.0</h2>
-    <% else %>
-      <h2 style="text-align: center;"><%= @average_rating %></h2>
-    <% end %>
+    <h2 style="text-align: center;">0.0</h2>
   </div>
   <div class="ml-1">
     <h4 style="text-align: center; margin-left: 50px; color: white!important;">Team average<br>rating</h4>
@@ -43,37 +26,15 @@
 
 <div class="card-2">
   <h3>Top rating</h3>
-  <div style="text-align: center!important; margin-bottom: 0.8em!important;">
-    <%# if nil? %>
-      <%#= image_tag('Avatar.png', class: 'avatar') %>
-    <%# else %>
-      <%#= cl_image_tag(@top_rating.photo.key, class: 'avatar') %>
-    <%# end %>
-    <% if @top_rating.nil? %>
-      <span></span>
-      <%= image_tag('star-full.svg', height: '20px', width: '20px') %> <span>-</span>
-    <% else %>
-      <span><%= @top_rating.first_name %> <%= @top_rating.last_name %></span>
-      <%= image_tag('star-full.svg', height: '20px', width: '20px') %> <%= @top_rating.av_rating %>
-    <% end %>
+  <div>
+    <%= image_tag('star-full.svg', height: '20px', width: '20px') %> <span>-</span>
   </div>
 </div>
 
 <div class="card-2">
   <h3>Low rating</h3>
-  <div style="text-align: center!important; margin-bottom: 0.8em!important;">
-    <%# if nil? %>
-      <%#= image_tag('avatar.png', class: 'avatar') %>
-    <%#% else %>
-      <%#= cl_image_tag(@low_rating.photo.key, class: 'avatar') %>
-    <%# end %>
-    <% if @low_rating.nil? %>
-      <span></span>
-      <%= image_tag('star-full.svg', height: '20px', width: '20px') %> <span>-</span>
-    <% else %>
-      <span><%= @low_rating.first_name %> <%= @low_rating.last_name %></span>
-      <%= image_tag('star-full.svg', height: '20px', width: '20px') %> <%= @low_rating.av_rating %>
-    <% end %>
+  <div>
+    <%= image_tag('star-full.svg', height: '20px', width: '20px') %> <span>-</span>
   </div>
 </div>
 

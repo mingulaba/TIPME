@@ -4,26 +4,26 @@
   </div>
 
   <% @team_members.each do |team_member| %>
-    <%= link_to profile_team_member_path(team_member) do %>
-      <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0.8em 0.8em; ">
-        <div class="image1">
-          <% if team_member.nil? %>
-            <p></p>
-          <% elsif team_member.photo.attached? %>
-            <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
-          <% else %>
-            <%= image_tag('Avatar.png', class: 'avatar') %>
-          <% end %>
-        </div>
-        <div class="name1">
-          <span><%= team_member.first_name %> <%= team_member.last_name %></span>
-        </div>
-        <div class="delete1" style="margin-right: 10px;">
-          <%= link_to team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa fa-trash fa-1x"></i>
-          <% end %>
-        </div>
+    <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0 0.8em; ">
+      <div class="image1">
+        <%= link_to profile_team_member_path(team_member) do %>
+        <% if team_member.nil? %>
+          <p></p>
+        <% elsif team_member.photo.attached? %>
+          <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+        <% else  %>
+          <%= image_tag('Avatar.png', class: 'avatar') %>
+        <% end %>
       </div>
+      <div class="name1">
+        <span><%= team_member.first_name %> <%= team_member.last_name %></span>
+      </div>
+      <div class="delete1" style="margin-right: 10px;">
+        <%= link_to team_member_path(team_member), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa fa-trash fa-1x"></i>
+        <% end %>
+      </div>
+    </div>
     <% end %>
   <% end %>
 </div>
