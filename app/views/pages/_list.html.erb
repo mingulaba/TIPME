@@ -1,12 +1,19 @@
-<div class="card-2">
+<div class="card-2" style="margin-bottom: 0.8em!important;">
   <div class="btn4">
     <%= link_to 'Add Team Member', new_restaurant_team_member_path(@restaurant) %>
   </div>
+
   <% @team_members.each do |team_member| %>
-      <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0 0.8em; ">
+    <%= link_to profile_team_member_path(team_member) do %>
+      <div class='' style="display: grid; grid-template-columns: 20% 65% 15%; grid-template-rows: 1fr; align-items: center; margin: 0.5em 0 0.8em 0.8em; ">
         <div class="image1">
-          <%= link_to profile_team_member_path(team_member) do %>
-          <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+          <% if team_member.nil? %>
+            <p></p>
+          <% elsif team_member.photo.attached? %>
+            <%= cl_image_tag(team_member.photo.key, class: 'avatar') %>
+          <% else %>
+            <%= image_tag('Avatar.png', class: 'avatar') %>
+          <% end %>
         </div>
         <div class="name1">
           <span><%= team_member.first_name %> <%= team_member.last_name %></span>
