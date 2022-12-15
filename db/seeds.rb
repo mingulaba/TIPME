@@ -17,8 +17,8 @@ User.destroy_all
 
 puts "Creating users"
 
-file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670423828/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg")
-user1 = User.new(first_name: "Ronald", last_name: "Rixby", password: "123456", email: "cardiganman@sweater.com", admin: true)
+file = URI.open("https://res.cloudinary.com/dcsnvqusv/image/upload/v1671106000/IMG_4983_2_ij7stx.jpg")
+user1 = User.new(first_name: "Maria", last_name: "", password: "123456", email: "cardiganman@sweater.com", admin: true)
 user1.photo.attach(io: file, filename: "https://res.cloudinary.com/dcsnvqusv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1670423828/TFT-Sinking-Manager-RAW-1024x640_bap87s.jpg", content_type: "image/jpg")
 user1.save
 
